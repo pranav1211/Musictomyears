@@ -12,6 +12,7 @@ Changelog :-
 
 
 The Wordchanger file :-
+
     ->As the name might give a hint, it is a code i wrote that helps automate the process of creating the html and javascript code for the site.
         -> The first version i inputted names of class,div,title,audio file to help generate the code.
         -> The second version i wrote code that was able to grab the first letter of each word that helped in creating the id for the elements.
