@@ -51,68 +51,7 @@ body {
     font-size: 30px;
     font-family: 'New Rocker', cursive;
 }
-
-#counter {
-    display: flex;
-    margin-left: 47%;
-    margin-top: -4%;
-}
-
-body {
-    background-image: linear-gradient(to bottom, #30cfd0 0%, #330867 100%);
-}
-
-.play,
-.pause {
-    margin: 25px;
-    font-size: 60px !important;
-    cursor: pointer;
-
-}
-
-.pause {
-    visibility: hidden;
-
-    margin-left: -89.5px;
-}
-
-.title {
-    border: 2px solid black;
-    border-radius: 20px;
-    margin-right: 35%;
-    background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-
-}
-
-.sname {
-    float: right;
-    padding-right: 40%;
-    margin-top: 2.6%;
-    font-family: 'New Rocker', cursive;
-    font-size: 30px;
-}
-
-#musiccontrols {
-    margin-left: 25%;
-    width: 50%;
-    background-color: white;
-    position: fixed;
-    z-index: 10;
-    margin-top: 43%;
-    text-align: center;
-    height: 70px;
-
-}
-
-#titletrack,
-#counter {
-
-    color: black;
-    font-size: 30px;
-    font-family: 'New Rocker', cursive;
-}
-
-#counter {
+#counter{
     display: flex;
     margin-left: 47%;
     margin-top: -4%;
