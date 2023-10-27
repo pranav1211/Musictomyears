@@ -4,7 +4,7 @@ I'm open to sugesstions and criticism as it will only make it better.
 
 Changelog :-
 
-    Phase 1 : 
+    27/10/23 : 
         V0.1
             -> made a change to the word changer to add a class and data-file-name value to the audio
             -> made the audio of the previous set to zero when another track starts playing
