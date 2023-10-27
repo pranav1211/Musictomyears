@@ -10,8 +10,9 @@ audioElements.forEach(audio => {
 
         if (currentlyPlaying !== null && currentlyPlaying !== audio) {
             currentlyPlaying.pause();
-            min = 0;
-            sec = 1;
+            min = 1;
+            sec = 0;
+            audio.currentTime = 0;
         }
         currentlyPlaying = audio;
         const fileName = audio.getAttribute('data-file-name');
@@ -285,4 +286,52 @@ document.querySelector('.KMCpa').addEventListener('click', () => {
     p13.pause();
     KMCpl.style.visibility = 'visible';
     KMCpa.style.visibility = 'hidden';
+});
+////////////////////////////////////////////
+
+var p14 = document.getElementById('t14')
+var MTKLpl = document.querySelector('.MTKLpl');
+var MTKLpa = document.querySelector('.MTKLpa');
+
+document.querySelector('.MTKLpl').addEventListener('click', () => {
+    p14.play();
+    MTKLpl.style.visibility = 'hidden';
+    MTKLpa.style.visibility = 'visible';
+});
+document.querySelector('.MTKLpa').addEventListener('click', () => {
+    p14.pause();
+    MTKLpl.style.visibility = 'visible';
+    MTKLpa.style.visibility = 'hidden';
+});
+////////////////////////////////////////////
+
+var p15 = document.getElementById('t15')
+var CDRGpl = document.querySelector('.CDRGpl');
+var CDRGpa = document.querySelector('.CDRGpa');
+
+document.querySelector('.CDRGpl').addEventListener('click', () => {
+    p15.play();
+    CDRGpl.style.visibility = 'hidden';
+    CDRGpa.style.visibility = 'visible';
+});
+document.querySelector('.CDRGpa').addEventListener('click', () => {
+    p15.pause();
+    CDRGpl.style.visibility = 'visible';
+    CDRGpa.style.visibility = 'hidden';
+});
+////////////////////////////////////////////
+
+var p16 = document.getElementById('t16')
+var WOTWSSpl = document.querySelector('.WOTWSSpl');
+var WOTWSSpa = document.querySelector('.WOTWSSpa');
+
+document.querySelector('.WOTWSSpl').addEventListener('click', () => {
+    p16.play();
+    WOTWSSpl.style.visibility = 'hidden';
+    WOTWSSpa.style.visibility = 'visible';
+});
+document.querySelector('.WOTWSSpa').addEventListener('click', () => {
+    p16.pause();
+    WOTWSSpl.style.visibility = 'visible';
+    WOTWSSpa.style.visibility = 'hidden';
 });

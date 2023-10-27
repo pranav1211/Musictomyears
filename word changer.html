@@ -104,7 +104,7 @@
             document.getElementById("epl").innerHTML = "document.querySelector('." + v1 + "pl').addEventListener('click', () => {<br>p" + v3 + ".play();<br>" + v1 + "pl.style.visibility = 'hidden';<br>" + v1 + "pa.style.visibility = 'visible';});";
             document.getElementById("epa").innerHTML = "document.querySelector('." + v1 + "pa').addEventListener('click', () => {<br>p" + v3 + ".pause();<br>" + v1 + "pl.style.visibility = 'visible';<br>" + v1 + "pa.style.visibility = 'hidden';});";
 
-            console.log('<br>\n\n<div class="' + v4 + ' title">\n<span class="material-symbols-outlined ' + v1 + 'pl play">\nplay_circle\n</span>\n<span class="material-symbols-outlined ' + v1 + 'pa pause">\npause_circle\n</span>\n<p class="' + v1 + ' sname">' + v6 + '</p>\n</div>\n<audio id=t' + v3 + '>\n<source src="music/' + v7 + '.opus" type="audio/mpeg">\n</audio>');
+            console.log('<br>\n\n<div class="' + v4 + ' title">\n<span class="material-symbols-outlined ' + v1 + 'pl play">\nplay_circle\n</span>\n<span class="material-symbols-outlined ' + v1 + 'pa pause">\npause_circle\n</span>\n<p class="' + v1 + ' sname">' + v6 + '</p>\n</div>\n<audio id=t' + v3 + ' class="audio-element" data-file-name="'+v7+'" >\n<source src="music/' + v7 + '.opus" type="audio/mpeg">\n</audio>');
 
 
 
