@@ -1,11 +1,24 @@
-var play = document.querySelector('.play')
-var pause = document.querySelector('.pause')
+var plays = document.querySelectorAll('.play')
+var pauses = document.querySelectorAll('.pause')
 
 const audioElements = document.querySelectorAll('.audio-element');
 let currentlyPlaying = null;
 
 audioElements.forEach(audio => {
-
+    var replaybut = document.querySelector('.replaybutt')
+    var replaystopbut = document.querySelector('.replaystopbutt')
+    replaybut.addEventListener('click', () => {
+        audio.loop = true;
+    });
+    replaystopbut.addEventListener('click', () => {
+        audio.loop = false;
+    });
+    audio.addEventListener('ended', () => {
+        if (audio.loop == true) {
+            audio.load();
+            
+        }
+    });
     audio.addEventListener('play', () => {
 
         if (currentlyPlaying !== null && currentlyPlaying !== audio) {
@@ -13,12 +26,16 @@ audioElements.forEach(audio => {
             min = 1;
             sec = 0;
             audio.currentTime = 0;
+
+
         }
         currentlyPlaying = audio;
         const fileName = audio.getAttribute('data-file-name');
         document.getElementById("titletrack").innerHTML = `${fileName}`;
+        const artfileName = audio.getAttribute('data-file-artist');
+        document.getElementById("trackartist").innerHTML = `${artfileName}`;
 
-
+        //counter
         var duration = audio.duration;
         duration = Math.trunc(duration);
         var minutes;
@@ -76,12 +93,16 @@ audioElements.forEach(audio => {
         intervalid2 = setInterval(minuter, 60000)
     });
 
+
     audio.addEventListener('pause', () => {
         clearInterval(intervalid1);
         clearInterval(intervalid2);
+
     });
 
+
 });
+
 
 
 /////////////////////////////////////////////////////////////////
@@ -334,4 +355,36 @@ document.querySelector('.WOTWSSpa').addEventListener('click', () => {
     p16.pause();
     WOTWSSpl.style.visibility = 'visible';
     WOTWSSpa.style.visibility = 'hidden';
+});
+////////////////////////////////////////////
+
+var p17 = document.getElementById('t17')
+var WWWYApl = document.querySelector('.WWWYApl');
+var WWWYApa = document.querySelector('.WWWYApa');
+
+document.querySelector('.WWWYApl').addEventListener('click', () => {
+    p17.play();
+    WWWYApl.style.visibility = 'hidden';
+    WWWYApa.style.visibility = 'visible';
+});
+document.querySelector('.WWWYApa').addEventListener('click', () => {
+    p17.pause();
+    WWWYApl.style.visibility = 'visible';
+    WWWYApa.style.visibility = 'hidden';
+});
+////////////////////////////////////////////
+
+var p18 = document.getElementById('t18')
+var LtDOBMAPSSpl = document.querySelector('.LtDOBMAPSSpl');
+var LtDOBMAPSSpa = document.querySelector('.LtDOBMAPSSpa');
+
+document.querySelector('.LtDOBMAPSSpl').addEventListener('click', () => {
+    p18.play();
+    LtDOBMAPSSpl.style.visibility = 'hidden';
+    LtDOBMAPSSpa.style.visibility = 'visible';
+});
+document.querySelector('.LtDOBMAPSSpa').addEventListener('click', () => {
+    p18.pause();
+    LtDOBMAPSSpl.style.visibility = 'visible';
+    LtDOBMAPSSpa.style.visibility = 'hidden';
 });
