@@ -17,3 +17,7 @@ The Wordchanger file :-\
         -> The second version i wrote code that was able to grab the first letter of each word that helped in creating the id for the elements.\
         -> The third and latest version is where i input the name of the file, the audio number and how many words is the title of the song.\
         -> I plan to keep upgrading features to make the process seamless, I plan to make it so that with only 1 input it can help generate the code.
+
+Dev notes:
+removed the interval for the minute part, made it a part of the second timer.
+an issue is there where the minute changes when the minute changes 1 second before it's supposed to.

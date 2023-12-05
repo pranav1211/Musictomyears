@@ -20,6 +20,7 @@ audioElements.forEach(audio => {
     var replaybut = document.querySelector('.replaybutt')
     var replaystopbut = document.querySelector('.replaystopbutt')
     var loopsecondr = 1; // used for control
+    var minuterchange;
 
     audio.addEventListener('play', () => {
 
@@ -27,12 +28,9 @@ audioElements.forEach(audio => {
 
         if (currentlyPlaying !== null && currentlyPlaying !== audio) {
             currentlyPlaying.pause();
-            minuter = 0;
+            minuter = 1;
             secondr = 1;
-            mindiv.innerHTML = minuter + ":";
-            minuter++;
-            clearInterval(intervalid1);
-            clearInterval(intervalid2);
+            mindiv.innerHTML = "0:";
             audio.currentTime = 0;
 
         }
@@ -59,13 +57,10 @@ audioElements.forEach(audio => {
             }
             if (secondr == 60) {
                 secondr = 0;
+                mindiv.innerHTML = minuter + ":";
+                minuter++;
             }
 
-        }
-
-        function forminute() {
-            mindiv.innerHTML = minuter + ":";
-            minuter++;
         }
 
         duration = duration + 1;
@@ -81,7 +76,7 @@ audioElements.forEach(audio => {
         }
 
         intervalid1 = setInterval(forsecond, 1000);
-        intervalid2 = setInterval(forminute, 60000);
+
         intervalid3 = setInterval(checktime, 1000);
 
         duration = audio.duration;
@@ -90,10 +85,9 @@ audioElements.forEach(audio => {
 
     audio.addEventListener('pause', () => {
         clearInterval(intervalid1);
-        clearInterval(intervalid2);
-        clearInterval(intervalid3);
 
     });
+    
 
     replaybut.addEventListener('click', () => {
         replaybut.style.visibility = 'hidden'
