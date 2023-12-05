@@ -7,32 +7,39 @@ body {
     margin-left: 25px;
     margin-right: 25px;
     margin-top: 25px;
-    font-size: 3vw !important;
     cursor: pointer;
     border-radius: 35px;
+
 }
 
-.play {
+.play-circle-img {
     visibility: visible;
+    width: 2.5vw;
+
 }
 
-.pause {
+.pause-circle-img {
     visibility: hidden;
+    margin-left: -5.32vw;
+    width: 2.5vw;
+}
 
-    margin-left: -4.52vw;
-}
-.replaybutt{
+.replaybutt {
     cursor: pointer;
+    width: 1.5vw;
 }
-.replaystopbutt{
+
+.replaystopbutt {
     cursor: pointer;
+    width: 1.5vw;
+    margin-left: -1.99vw !important;
+    visibility: hidden;
 }
+
 .title {
     border-bottom: 1px solid black;
     margin-bottom: 0.4vw;
-    
-    
-    padding-bottom: 1.7vw;
+    padding-bottom: 1.vw;
     padding-right: 1vw;
     margin-top: -0.6vw;
 
@@ -44,12 +51,17 @@ body {
     font-size: 1.2vw;
     font-weight: bold;
 }
-.artist{
+
+.artist {
     font-size: 0.9vw;
-    float:inherit;
+    float: right;
 }
 
-#playbuts{
+#songnamemain {
+    float: right;
+}
+
+#playbuts {
     margin-top: 4vw;
     display: flex;
     flex-direction: column;
@@ -60,22 +72,23 @@ body {
     margin-right: 28vw;
     margin-left: 28vw;
 }
+
 ::-webkit-scrollbar {
     width: 10px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    box-shadow: 0.8 0 0 5px grey; 
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: 0.8 0 0 5px grey;
     border-radius: 10px;
-  }
-   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: black; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: black;
     border-radius: 10px;
-    
-  }
+
+}
 
 
 #musiccontrols {
@@ -85,17 +98,20 @@ body {
     text-align: center;
     margin-left: 3vw;
     padding: 1vw;
-    width: 20vw;    
+    width: 20vw;
 }
 
-#titletrack,#trackartist{
-    font-family: 'Nova Mono'; 
+#titletrack,
+#trackartist {
+    font-family: 'Nova Mono';
 }
-#titletrack{
-font-weight: bolder;
+
+#titletrack {
+    font-weight: bolder;
 }
-#trackartist{
-    font-size: 1.2vw;   
+
+#trackartist {
+    font-size: 1.2vw;
 }
 
 #titletrack,
@@ -107,7 +123,7 @@ font-weight: bolder;
 }
 
 #counter {
-    display: flex;    
-    margin-top: -4%;
-    margin-left: 8vw;
+    display: flex;
+    margin-top: -1%;
+    margin-left: 8.4vw;
 }

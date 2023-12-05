@@ -14,296 +14,79 @@
 </head>
 
 <body>
-
-    <div id="audio files">
-        <audio id="t1" class="audio-element" data-file-artist="Becky G" data-file-name="Shower">
-            <source src="shower.mp3" type="audio/mpeg">
-        </audio>
-        <audio id="t2" class="audio-element" data-file-artist="Usher" data-file-name="Confessions Part 2">
-            <source src="music/Confessions Part 2.opus" type="audio/mpeg">
-        </audio>
-        <audio id="t3" class="audio-element" data-file-artist="Rent" data-file-name="Season of Love">
-            <source src="music/Seasons of Love.opus" type="audio/mpeg">
-        </audio>
-        <audio id="t4" class="audio-element" data-file-artist="Adele" data-file-name="Set Fire to the rain">
-            <source src="music/Set Fire To The Rain Live at The Royal Albert Hall.opus" type="audio/mpeg">
-        </audio>
-        <audio id="t5" class="audio-element" data-file-artist="Arizona Zervas" data-file-name="Roxxane">
-            <source src="music/Arizona Zervas - ROXANNE.opus" type="audio/mpeg">
-        </audio>
-        <audio id="t6" class="audio-element" data-file-artist="Lady Gaga" data-file-name="Shallow">
-            <source src="music/Shallow (Radio Edit).opus" type="audio/mpeg">
-        </audio>
-        <audio id=t7 class="audio-element" data-file-artist="Major Lazer" data-file-name="Default Vibe">
-            <source src="music/Fortnite - Lobby Track - Default Vibe Original.opus" type="audio/mpeg">
-        </audio>
-        <audio id=t8 class="audio-element" data-file-artist="Ariana Grande" data-file-name="One Last Time">
-            <source src="music/Ariana Grande - One Last Time.opus" type="audio/mpeg">
-        </audio>
-        <audio id=t9 class="audio-element" data-file-artist="Selena Gomez, Marshmello" data-file-name="Wolves">
-            <source src="music/Selena Gomez, Marshmello - Wolves.opus" type="audio/mpeg">
-        </audio>
-    </div>
-
     <div id="musiccontrols">
         <div id="titletrack"></div>
         <div id="trackartist"></div>
         <div id="counter">
-            <p id="minuter"></p>
-            <p id="seconder"></p>
+            <p id="minuter">0:</p>
+            <p id="seconder">00</p>
         </div>
-        <span class="material-symbols-outlined replaybutt">
-            repeat
+        <span class="material-symbols-outlined">
+            <img src="Images/repeat off.svg" class="replaybutt">
         </span>
-        <span class="material-symbols-outlined replaystopbutt">
-            repeat_on
+        <span class="material-symbols-outlined">
+            <img src="Images/repeat on.svg" class="replaystopbutt">
         </span>
     </div>
 
     <div id="playbuts">
 
         <div class="showerbeckyg title">
-            <span class="material-symbols-outlined showerpl play">
-                play_circle
+            <span class="material-symbols-outlined play">
+                <img src="Images/play_circle.svg" class="play-circle-img showerpl">
             </span>
-            <span class="material-symbols-outlined showerpa pause">
-                pause_circle
+            <span class="material-symbols-outlined  pause">
+                <img src="Images/pause_circle.svg" class="pause-circle-img showerpa">
             </span>
-            <p class="sbg sname">Shower<br><span class="artist">Becky G</span></p>
+            <p class="sbg sname"><span id="songnamemain">Shower</span><br><span class="artist">Becky G</span></p>
         </div>
+        <audio id="t1" class="audio-element" data-file-artist="Becky G" data-file-name="Shower">
+            <source src="shower.opus" type="audio/mpeg">
+        </audio>
 
         <div class="confessions-part-2-usher title">
-            <span class="material-symbols-outlined cptupl play">
-                play_circle
+            <span class="material-symbols-outlined  play">
+                <img src="Images/play_circle.svg" class="play-circle-img cptupl">
             </span>
-            <span class="material-symbols-outlined cptupa pause">
-                pause_circle
+            <span class="material-symbols-outlined  pause">
+                <img src="Images/pause_circle.svg" class="pause-circle-img cptupa">
             </span>
-            <p class="cptu sname">Confessions part 2<br><span class="artist">Usher</span></p>
+            <p class="cptu sname"><span id="songnamemain">Confessions part 2</span><br><span class="artist">Usher</span>
+            </p>
         </div>
-
+        <audio id="t2" class="audio-element" data-file-artist="Usher" data-file-name="Confessions Part 2">
+            <source src="music/Confessions Part 2.opus" type="audio/mpeg">
+        </audio>
 
 
         <div class="seasons-of-love-rent title">
-            <span class="material-symbols-outlined solrpl play">
-                play_circle
+            <span class="material-symbols-outlined play">
+                <img src="Images/play_circle.svg" class="play-circle-img solrpl">
             </span>
-            <span class="material-symbols-outlined solrpa pause">
-                pause_circle
+            <span class="material-symbols-outlined pause">
+                <img src="Images/pause_circle.svg" class="pause-circle-img solrpa">
             </span>
-            <p class="solr sname">Seasons of Love<br><span class="artist">Rent</span></p>
+            <p class="solr sname"><span id="songnamemain">Seasons of Love</span><br><span class="artist">Rent</span></p>
         </div>
-
+        <audio id="t3" class="audio-element" data-file-artist="Rent" data-file-name="Season of Love">
+            <source src="music/Seasons of Love.opus" type="audio/mpeg">
+        </audio>
 
 
         <div class="set-fire-to-the-rain-adele-royal-albert title">
-            <span class="material-symbols-outlined sfttrarlpl play">
-                play_circle
+            <span class="material-symbols-outlined  play">
+                <img src="Images/play_circle.svg" class="play-circle-img sfttrarlpl">
             </span>
-            <span class="material-symbols-outlined sfttrarlpa pause">
-                pause_circle
+            <span class="material-symbols-outlined pause">
+                <img src="Images/pause_circle.svg" class="pause-circle-img sfttrarlpa">
             </span>
-            <p class="sfttrarl sname">Set Fire to the rain(Royal Albert hall)<br><span class="artist">Adele</span></p>
+            <p class="sfttrarl sname"><span id="songnamemain">Set Fire to the rain(Royal Albert hall)</span><br><span
+                    class="artist">Adele</span></p>
         </div>
-
-
-
-        <div class="roxxanne-arizona-zervas title">
-            <span class="material-symbols-outlined razpl play">
-                play_circle
-            </span>
-            <span class="material-symbols-outlined razpa pause">
-                pause_circle
-            </span>
-            <p class="raz sname">Roxxane<br><span class="artist">Arizona Zervas</span></p>
-        </div>
-
-
-        <div class="shallow-lady-gaga title">
-            <span class="material-symbols-outlined slgpl play">
-                play_circle
-            </span>
-            <span class="material-symbols-outlined slgpa pause">
-                pause_circle
-            </span>
-            <p class="slg sname">Shallow<br><span class="artist">Lady Gaga</span></p>
-        </div>
-
-
-        <div class="fortnite-lobby-default-vibe title">
-            <span class="material-symbols-outlined fltdvpl play">
-                play_circle
-            </span>
-            <span class="material-symbols-outlined fltdvpa pause">
-                pause_circle
-            </span>
-            <p class="fltdv sname">Default Vibe<br><span class="artist">Major Lazer</span></p>
-        </div>
-
-
-        <div class="one-last-time-ariana-grande title">
-            <span class="material-symbols-outlined oltagpl play">
-                play_circle
-            </span>
-            <span class="material-symbols-outlined oltagpa pause">
-                pause_circle
-            </span>
-            <p class="oltag sname">One Last Time<br><span class="artist">Ariana Grande</span></p>
-        </div>
-
-
-
-        <div class="wolves-selenagomez-marshmello title">
-            <span class="material-symbols-outlined wsgmpl play">
-                play_circle
-            </span>
-            <span class="material-symbols-outlined wsgmpa pause">
-                pause_circle
-            </span>
-            <p class="wsgm sname">Wolves<br><span class="artist">Selena Gomez, Marshmello</span></p>
-        </div>
-
-
-        <div class="The-Boat-Song-Agam title">
-            <span class="material-symbols-outlined TBSApl play">
-                play_circle
-            </span>
-            <span class="material-symbols-outlined TBSApa pause">
-                pause_circle
-            </span>
-            <p class="TBSA sname">The Boat Song<br><span class="artist">Agam</span></p>
-        </div>
-        <audio id=t10 class="audio-element" data-file-artist="Agam" data-file-name="The Boat Song" name="TBSApa"
-            value="TBSApa">
-            <source src="music/The Boat Song - Agam.opus" type="audio/mpeg">
+        <audio id="t4" class="audio-element" data-file-artist="Adele" data-file-name="Set Fire to the rain">
+            <source src="music/Set Fire To The Rain Live at The Royal Albert Hall.opus" type="audio/mpeg">
         </audio>
-
-
-
-        <div class="Big-Boys-SNL title">
-            <span class="material-symbols-outlined BBSpl play">
-                play_circle
-            </span>
-            <span class="material-symbols-outlined BBSpa pause">
-                pause_circle
-            </span>
-            <p class="BBS sname">Big Boys<br><span class="artist">SNL</span></p>
-        </div>
-        <audio id=t11 class="audio-element" data-file-artist="SNL" data-file-name="Big Boys">
-            <source src="music/Big Boys - SNL.opus" type="audio/mpeg">
-        </audio>
-
-
-
-        <div class="Appozhum-Thaikkudam-Bridge title">
-            <span class="material-symbols-outlined ATBpl play">
-                play_circle
-            </span>
-            <span class="material-symbols-outlined ATBpa pause">
-                pause_circle
-            </span>
-            <p class="ATB sname">Appozhum<br><span class="artist">Thaikkudam Bridge</span></p>
-        </div>
-        <audio id=t12 class="audio-element" data-file-artist="Thaikkudam Bridge" data-file-name="Appozhum">
-            <source src="music/Appozhum - Thaikkudam Bridge.opus" type="audio/mpeg">
-        </audio>
-
-
-
-        <div class="Kaanthaa-Masala-Coffee title">
-
-            <span class="material-symbols-outlined KMCpl play">
-                play_circle
-            </span>
-            <span class="material-symbols-outlined KMCpa pause">
-                pause_circle
-            </span>
-            <p class="KMC sname">Kaanthaa<br><span class="artist">Masala Coffee</span></p>
-        </div>
-        <audio id=t13 class="audio-element" data-file-artist="Masala Coffee" data-file-name="Kaanthaa">
-            <source src="music/Kaanthaa - Masala Coffee.opus" type="audio/mpeg">
-        </audio>
-
-
-
-        <div class="Money-Trees-Kendrick-Lamar title">
-            <span class="material-symbols-outlined MTKLpl play">
-                play_circle
-            </span>
-            <span class="material-symbols-outlined MTKLpa pause">
-                pause_circle
-            </span>
-            <p class="MTKL sname">Money Trees<br><span class="artist">Kendrick Lamar</span></p>
-        </div>
-        <audio id=t14 class="audio-element" data-file-artist="Kendrick Lamar" data-file-name="Money Trees">
-            <source src="music/Money Trees - Kendrick Lamar.opus" type="audio/mpeg">
-        </audio>
-
-
-        <div class="Calm-Down-Rema,Selena-Gomez title">
-            <span class="material-symbols-outlined CDRGpl play">
-                play_circle
-            </span>
-            <span class="material-symbols-outlined CDRGpa pause">
-                pause_circle
-            </span>
-            <p class="CDRG sname">Calm Down<br><span class="artist">Rema,Selena Gomez</span></p>
-        </div>
-        <audio id=t15 class="audio-element" data-file-artist="Rema,Selena Gomez" data-file-name="Calm Down">
-            <source src="music/Calm Down - Rema,Selena Gomez.opus" type="audio/mpeg">
-        </audio>
-
-
-        <div class="Writings-On-The-Wall-Sam-Smith title">
-            <span class="material-symbols-outlined WOTWSSpl play">
-                play_circle
-            </span>
-            <span class="material-symbols-outlined WOTWSSpa pause">
-                pause_circle
-            </span>
-            <p class="WOTWSS sname">Writing's On The Wall<br><span class="artist">Sam Smith</span></p>
-        </div>
-        <audio id=t16 class="audio-element" data-file-artist="Sam Smith" data-file-name="Writing's On The Wall">
-            <source src="music/Writing's On The Wall - Sam Smith.opus" type="audio/mpeg">
-        </audio>
-
-
-
-        <div class="When-We-Were-Young-Adele title">
-            <span class="material-symbols-outlined WWWYApl play">
-                play_circle
-            </span>
-            <span class="material-symbols-outlined WWWYApa pause">
-                pause_circle
-            </span>
-            <p class="WWWYA sname">When We Were Young<br><span class="artist">Adele</span></p>
-        </div>
-        <audio id=t17 class="audio-element" data-file-artist="Adele" data-file-name="When We Were Young">
-            <source src="music/When We Were Young - Adele.opus" type="audio/mpeg">
-        </audio>
-
-
-
-        <div class="Leave-the-Door-Open-Bruno-Mars-Anderson-Paak-Silk-Sonic title">
-            <span class="material-symbols-outlined LtDOBMAPSSpl play">
-                play_circle
-            </span>
-            <span class="material-symbols-outlined LtDOBMAPSSpa pause">
-                pause_circle
-            </span>
-            <p class="LtDOBMAPSS sname">Leave the Door Open<br><span class="artist">Bruno Mars, Anderson Paak, Silk
-                    Sonic</span></p>
-        </div>
-        <audio id=t18 class="audio-element" data-file-artist="Bruno Mars, Anderson Paak, Silk
-            Sonic" data-file-name="Leave the Door Open">
-            <source src="music/Leave the Door Open - Bruno Mars, Anderson Paak, Silk Sonic.opus" type="audio/mpeg">
-        </audio>
-
-
     </div>
-
-
-
     <script src="music.js" type="text/javascript"></script>
 </body>
 
