@@ -18,6 +18,10 @@ The Wordchanger file :-\
         -> The third and latest version is where i input the name of the file, the audio number and how many words is the title of the song.\
         -> I plan to keep upgrading features to make the process seamless, I plan to make it so that with only 1 input it can help generate the code.
 
-Dev notes:
-removed the interval for the minute part, made it a part of the second timer.
-an issue is there where the minute changes when the minute changes 1 second before it's supposed to.
+Dev notes / ideas:\
+removed the interval for the minute part, made it a part of the second timer.\
+an issue is there where the minute changes when the minute changes 1 second before it's supposed to.\
+removed 16 songs from the main list because it became too much to handle with the amount of changes i am making.\
+there are 4 songs with which i am testing right now and once i reach a stable version where i can easily change all the stuff without going through each one of them.\
+i dont want it to be perfect i just need it to be efficient.\
+chane the word changer document to make it compatible with new format
