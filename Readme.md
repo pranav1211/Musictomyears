@@ -9,6 +9,11 @@ Changelog :-
             -> made a change to the word changer to add a class and data-file-name value to the audio
             -> made the audio of the previous set to zero when another track starts playing
             -> added 3 songs.
+    18/12/23 :
+        V 0.2
+        -> removed 16 songs
+        -> the music timer works now properly.
+        -> the pause button and the play button reset to original position after the song ends
 
 
 The Wordchanger file :-\
@@ -19,9 +24,15 @@ The Wordchanger file :-\
         -> I plan to keep upgrading features to make the process seamless, I plan to make it so that with only 1 input it can help generate the code.
 
 Dev notes / ideas:\
+
+5/12/23 \
 removed the interval for the minute part, made it a part of the second timer.\
 an issue is there where the minute changes when the minute changes 1 second before it's supposed to.\
 removed 16 songs from the main list because it became too much to handle with the amount of changes i am making.\
 there are 4 songs with which i am testing right now and once i reach a stable version where i can easily change all the stuff without going through each one of them.\
 i dont want it to be perfect i just need it to be efficient.\
-chane the word changer document to make it compatible with new format
+chane the word changer document to make it compatible with new format.
+
+18/12/23\
+
+made the fix of the minute part starting on 59 seconds, realised that it was a scope issue.

@@ -10,17 +10,22 @@ let currentlyPlaying = null;
 audioElements.forEach(audio => {
 
     var duration;
-    var minuter = 1; // goes in the inute div
+    var minuter = 0; // goes in the inute div
     var secondr = 1; //goes in the second div
     var mindiv = document.querySelector('#minuter');
     var secdiv = document.querySelector('#seconder');
     var intervalid1;
-    var intervalid2;
-    var intervalid3;
     var replaybut = document.querySelector('.replaybutt')
     var replaystopbut = document.querySelector('.replaystopbutt')
-    var loopsecondr = 1; // used for control
-    var minuterchange;
+    let loopit;
+    var songid = audio.getAttribute('song-id');
+    let pauseid = "." + songid + "pa";
+    let pause = document.querySelector(pauseid);
+    let playid = "." + songid + "pl";
+    let play = document.querySelector(playid);
+    let idd = audio.getAttribute('id');
+    idd = "#" + idd;
+    let iddd = document.querySelector(idd);
 
     audio.addEventListener('play', () => {
 
@@ -41,63 +46,56 @@ audioElements.forEach(audio => {
         const artfileName = audio.getAttribute('data-file-artist');
         document.getElementById("trackartist").innerHTML = `${artfileName}`;
 
+
         ///////// counter
 
         function forsecond() {
 
+            if (secondr == 60) {
+                secondr = 0;
+                minuter++;
+                mindiv.innerHTML = minuter + ":";
+            }
             if (secondr < 10) {
                 secdiv.innerHTML = "0" + secondr;
                 secondr++;
-                loopsecondr++;
             }
             else {
                 secdiv.innerHTML = secondr;
                 secondr++;
-                loopsecondr++;
             }
-            if (secondr == 60) {
-                secondr = 0;
-                mindiv.innerHTML = minuter + ":";
-                minuter++;
-            }
-
         }
-
-        duration = duration + 1;
-
-        function checktime() {
-            if (loopsecondr == duration) {
-                secondr = 1;
-                loopsecondr = 1;
-                clearInterval(intervalid2);
-                minuter = 1;
-            }
-
-        }
-
         intervalid1 = setInterval(forsecond, 1000);
-
-        intervalid3 = setInterval(checktime, 1000);
-
-        duration = audio.duration;
-        duration = Math.trunc(duration) + 1;
     });
 
     audio.addEventListener('pause', () => {
         clearInterval(intervalid1);
-
     });
-    
+
 
     replaybut.addEventListener('click', () => {
         replaybut.style.visibility = 'hidden'
         replaystopbut.style.visibility = 'visible';
-        audio.loop = true;
+        loopit = true;
     });
     replaystopbut.addEventListener('click', () => {
         replaybut.style.visibility = 'visible'
         replaystopbut.style.visibility = 'hidden';
-        audio.loop = false;
+        loopit = false;
+    });
+
+    audio.addEventListener('ended', () => {
+
+        if (loopit == true) {
+            iddd.play();
+
+        }
+        else {
+            pause.style.visibility = 'hidden';
+            play.style.visibility = 'visible';
+        }
+        minuter = 1;
+        secondr = 0;
     });
 
 

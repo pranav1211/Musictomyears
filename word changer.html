@@ -110,37 +110,6 @@
             console.log('<br>\n\n<div class="' + v4 + ' title">\n<span class="material-symbols-outlined ' + v1 + 'pl play">\nplay_circle\n</span>\n<span class="material-symbols-outlined ' + v1 + 'pa pause">\npause_circle\n</span>\n<p class="' + v1 + ' sname">' + v6 + '</p>\n</div>\n<audio id=t' + v3 + ' class="audio-element" data-file-name="' + v7 + '" >\n<source src="music/' + v7 + '.opus" type="audio/mpeg">\n</audio>');
 
 
-
-
-            vk = v1 + " song"
-            console.log(vk);
-            localStorage.setItem(vk, v3)
-
-            function keyandvaluesonglocals() {
-                const keyandvaluesong = {};
-                Object.keys(localStorage).forEach(key => {
-                    if (key.includes('song')) {
-                        keyandvaluesong[key] = localStorage.getItem(key);
-                    }
-                });
-                return keyandvaluesong;
-            }
-
-            const keyandvaluesong = keyandvaluesonglocals();
-            let sortsong = [];
-            for (var vehicle in keyandvaluesong) {
-                sortsong.push([vehicle, keyandvaluesong[vehicle]]);
-            }
-
-            sortsong.sort(function (a, b) {
-                return a[1] - b[1];
-            });
-            console.log(sortsong);
-
-
-
-            v3++;
-            localStorage.setItem('noofsongs', v3)
         }
     </script>
 </body>
