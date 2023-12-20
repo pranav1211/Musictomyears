@@ -180,7 +180,7 @@ audioElements.forEach(audio => {
 var p1 = document.getElementById("t1")
 var checker1 = '1';
 document.querySelector('.showerpl').addEventListener("click", () => {
-    if (checker1 == '1' && totalchecker == '1') {
+    if (checker1 == '1' || totalchecker == '1') {
         p1.play();
         totalchecker = '0';
         checker1 = '0';
@@ -198,7 +198,7 @@ document.querySelector('.showerpl').addEventListener("click", () => {
 var p2 = document.getElementById("t2")
 var checker2 = '1';
 document.querySelector('.cptupl').addEventListener('click', () => {
-    if (checker2 == '1' && totalchecker == '1') {
+    if (checker2 == '1' || totalchecker == '1') {
         p2.play();
         totalchecker = '0';
         checker2 = '0';
@@ -216,7 +216,7 @@ document.querySelector('.cptupl').addEventListener('click', () => {
 var p3 = document.getElementById("t3")
 var checker3 = '1';
 document.querySelector('.solrpl').addEventListener('click', () => {
-    if (checker3 == '1' && totalchecker == '1') {
+    if (checker3 == '1' || totalchecker == '1') {
         p3.play();
         totalchecker = '0';
         checker3 = '0';
@@ -234,7 +234,7 @@ document.querySelector('.solrpl').addEventListener('click', () => {
 var p4 = document.getElementById('t4')
 var checker4 = '1';
 document.querySelector('.sfttrarlpl').addEventListener('click', () => {
-    if (checker4 == '1' && totalchecker == '1') {
+    if (checker4 == '1' || totalchecker == '1') {
         p4.play();
         totalchecker = '0';
         checker4 = '0';
