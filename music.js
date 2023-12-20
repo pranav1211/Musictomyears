@@ -28,7 +28,7 @@ shuffleoff.addEventListener('click', () => {
 fetch('musicdata.json')
     .then(response => response.json())
     .then(data => {
-        const noofsongs = data['number of songs'];
+        var noofsongs = data['number of songs'];
         console.log(noofsongs);
     })
     .catch(error => console.error('Error reading JSON:', error));
