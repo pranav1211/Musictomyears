@@ -7,7 +7,7 @@ let shuffleon = document.querySelector('.shuffleon');
 let shuffleoff = document.querySelector('.shuffleoff');
 
 var songid = "#t";
-var songnumber = 1;
+var songnumber = 3;
 
 var totalchecker = '1';
 
