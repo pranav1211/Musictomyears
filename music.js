@@ -42,7 +42,7 @@ audioElements.forEach(audio => {
     audio.addEventListener('play', () => {
 
         mcpause.addEventListener('click', () => {
-            iddd.pause(); 
+            currentlyPlaying.pause(); 
             mcplay.style.visibility = 'visible';
             mcpause.style.visibility = 'hidden';
             totalchecker = '1';
@@ -50,7 +50,7 @@ audioElements.forEach(audio => {
         });
 
         mcplay.addEventListener('click', () => {
-            iddd.play();
+            currentlyPlaying.play();
             mcplay.style.visibility = 'hidden';
             mcpause.style.visibility = 'visible';
             console.log(audio)
