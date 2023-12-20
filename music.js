@@ -53,6 +53,7 @@ audioElements.forEach(audio => {
             iddd.play();
             mcplay.style.visibility = 'hidden';
             mcpause.style.visibility = 'visible';
+            console.log(iddd)
         });
 
 
