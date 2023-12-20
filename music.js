@@ -61,7 +61,7 @@ audioElements.forEach(audio => {
             minuter = 0;
             secondr = 1;
             mindiv.innerHTML = "0:";
-            audio.currentTime = 0;
+            audio.currentTime = 0; 
 
         }
 
