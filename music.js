@@ -46,6 +46,7 @@ audioElements.forEach(audio => {
             mcplay.style.visibility = 'visible';
             mcpause.style.visibility = 'hidden';
             totalchecker = '1';
+            console.log(iddd)
         });
 
         mcplay.addEventListener('click', () => {
