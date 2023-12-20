@@ -121,6 +121,8 @@ audioElements.forEach(audio => {
     nextsong.addEventListener('click', () => {
         if (noofsongs < newsongnumber) {
             audio.currentTime = 3000;
+            minuter = 0;
+            secondr = 1;
         }
 
         clearInterval(intervalid1);
