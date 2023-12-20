@@ -107,8 +107,9 @@ audioElements.forEach(audio => {
         intervalid1 = setInterval(forsecond, 1000);
     });
 
-    nextsong.addEventListener('click',()=>{
-        songid.play();
+    nextsong.addEventListener('click', () => {
+        getsong = document.querySelector(songid);
+        getsong.play();
         minuter = 0;
         secondr = 1;
     });
