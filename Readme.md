@@ -19,7 +19,7 @@ Changelog :-
             -> music timer still works properly
             -> added next, previous and shuffle buttons that do not work for the moment, will enable 
                 in the future.
-            ->removed the pause button, you can still pause by pressing the play button it just does not\
+            ->removed the pause button, you can still pause by pressing the play button it just does not
                 show. the pause button can be seen in the music controls section.
                 made it to work even when song is changed in the middle and also made it so 
                 when you go back to play another song that was played before it plays and does not 
