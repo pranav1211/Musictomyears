@@ -119,15 +119,17 @@ audioElements.forEach(audio => {
 
     // next song button
     nextsong.addEventListener('click', () => {
+        if (noofsongs < newsongnumber) {
+            songduration = audio.duration;
+            getsong.currentTime = songduration;
+        }
+        
         clearInterval(intervalid1);
         getsong = document.querySelector(songid);
         getsong.play();
         mcplay.style.visibility = 'hidden';
         mcpause.style.visibility = 'visible';
-        if (noofsongs < newsongnumber) {
-            songduration = audio.duration;
-            getsong.currentTime = songduration;
-        }
+
         minuter = 0;
         secondr = 1;
     });
