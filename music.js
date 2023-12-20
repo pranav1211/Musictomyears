@@ -32,7 +32,7 @@ fetch('musicdata.json')
     .then(response => response.json())
     .then(data => {
         // Access the value using the key
-        const numberOfSongs = data['number of songs'];
+        const noofsongs = data['number of songs'];
         console.log(numberOfSongs);
     })
 
