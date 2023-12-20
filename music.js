@@ -48,11 +48,10 @@ audioElements.forEach(audio => {
         var newsongnumber = songnumber.charAt(1);
         newsongnumber = parseInt(newsongnumber);
         newsongnumber++;
-        console.log(newsongnumber)
-
+        
         songid = "#t" + newsongnumber;
         var getsong = document.querySelector(songid);
-        console.log(getsong)
+        getsong.play();
 
         // music control pause button
         mcpause.addEventListener('click', () => {
