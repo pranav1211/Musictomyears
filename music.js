@@ -28,7 +28,7 @@ shuffleoff.addEventListener('click', () => {
 // }
 
 // Using fetch
-fetch('https://beyondmebtw.com/projects/music/musicdata.json')
+fetch('musicdata.json')
     .then(response => response.json())
     .then(data => {
         // Access the value using the key
