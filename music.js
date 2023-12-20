@@ -19,11 +19,6 @@ shuffleoff.addEventListener('click', () => {
 });
 
 audioElements.forEach(audio => {
-    currentlyPlaying = audio;
-    const fileName = audio.getAttribute('data-file-name');
-    document.getElementById("titletrack").innerHTML = `${fileName}`;
-    const artfileName = audio.getAttribute('data-file-artist');
-    document.getElementById("trackartist").innerHTML = `${artfileName}`;
 
     var minuter = 0; // goes in the inute div
     var secondr = 1; //goes in the second div
@@ -69,6 +64,13 @@ audioElements.forEach(audio => {
             audio.currentTime = 0;
 
         }
+
+        currentlyPlaying = audio;
+        const fileName = audio.getAttribute('data-file-name');
+        document.getElementById("titletrack").innerHTML = `${fileName}`;
+        const artfileName = audio.getAttribute('data-file-artist');
+        document.getElementById("trackartist").innerHTML = `${artfileName}`;
+
 
         // counter
 
