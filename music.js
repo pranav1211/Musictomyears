@@ -49,7 +49,7 @@ audioElements.forEach(audio => {
         });
 
         mcplay.addEventListener('click', () => {
-            audio.play();
+            iddd.play();
             mcplay.style.visibility = 'hidden';
             mcpause.style.visibility = 'visible';
         });
