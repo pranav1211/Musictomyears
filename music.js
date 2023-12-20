@@ -51,7 +51,6 @@ audioElements.forEach(audio => {
         newsongnumber = songnumber.charAt(1); // taking the number of the song
         newsongnumber = parseInt(newsongnumber);
         newsongnumber++;
-
         songid = "#t" + newsongnumber; // setting the id for the next song
 
 
@@ -106,6 +105,12 @@ audioElements.forEach(audio => {
             }
         }
         intervalid1 = setInterval(forsecond, 1000);
+    });
+
+    nextsong.addEventListener('click',()=>{
+        songid.play();
+        minuter = 0;
+        secondr = 1;
     });
 
     //pause
