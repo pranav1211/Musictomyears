@@ -118,7 +118,7 @@ audioElements.forEach(audio => {
 
         if (noofsongs < newsongnumber){
             songduration = audio.duration;
-            getsong.currentTime = songduration;
+            console.log(songduration)
         }
         minuter = 0;
         secondr = 1;
