@@ -64,7 +64,9 @@ Dev notes / ideas:
 
 20/12/23 
 
-->have to work on the loop button to make it loop for either the whole playlist or just and individual song
-->have to make a data
+->have to work on the loop button to make it loop for either the whole playlist or just and individual song. \
+->have to enter song data into json file. look into SQLlite.\
+->have to work on the shuffle button
+->have to work on the next and previous song previous song button, for previous song button set time to 1 second and also do the clear interval and change content in div for it.
 
 
