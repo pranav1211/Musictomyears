@@ -67,7 +67,6 @@ audioElements.forEach(audio => {
 
 
         // counter
-
         function forsecond() {
 
             if (secondr == 60) {
