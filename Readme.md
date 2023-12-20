@@ -46,6 +46,8 @@ The Wordchanger file :-\
         -> The third and latest version is where i input the name of the file, the audio number and how many words is the title of the song.\
         -> I plan to keep upgrading features to make the process seamless, I plan to make it so that with only 1 input it can help generate the code.
 
+************************************
+
 Dev notes / ideas: (ignore if you want)
 
 5/12/23 
