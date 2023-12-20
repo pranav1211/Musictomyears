@@ -45,8 +45,6 @@ audioElements.forEach(audio => {
 
     let loopit; // to check if track should be looped
 
-
-
     audio.addEventListener('play', () => {
 
         //gets the id for the current audio playing
@@ -55,6 +53,7 @@ audioElements.forEach(audio => {
         newsongnumber = parseInt(newsongnumber);
         newsongnumber++;
         songid = "#t" + newsongnumber; // setting the id for the next song
+
 
         // music control pause button
         mcpause.addEventListener('click', () => {
@@ -117,10 +116,6 @@ audioElements.forEach(audio => {
         mcplay.style.visibility = 'hidden';
         mcpause.style.visibility = 'visible';
 
-        if (noofsongs < newsongnumber) {
-            songduration = audio.duration;
-            console.log(songduration)
-        }
         minuter = 0;
         secondr = 1;
     });
