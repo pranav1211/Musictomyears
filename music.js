@@ -33,7 +33,7 @@ fetch('musicdata.json')
     .then(data => {
         // Access the value using the key
         const noofsongs = data['number of songs'];
-        console.log(numberOfSongs);
+        console.log(noofsongs);
     })
 
     .catch(error => console.error('Error reading JSON:', error));
