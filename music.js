@@ -111,6 +111,7 @@ audioElements.forEach(audio => {
     //on end to loop or not
 
     audio.addEventListener('ended', () => {
+        
         minuter = 0;
         secondr = 1;
 
@@ -123,6 +124,10 @@ audioElements.forEach(audio => {
             mcplay.style.visibility = 'visible';
             mcpause.style.visibility = 'hidden';
         }
+
+        songid = songid + songnumber;
+        var getsong = document.querySelector(songid);
+        getsong.play();
     });
 });
 
