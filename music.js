@@ -33,6 +33,7 @@ audioElements.forEach(audio => {
     
     audio.addEventListener('play', () => {
 
+        // music control pause button
         mcpause.addEventListener('click', () => {
             currentlyPlaying.pause();
             mcplay.style.visibility = 'visible';
@@ -40,6 +41,7 @@ audioElements.forEach(audio => {
             totalchecker = '1';
         });
 
+// music control play button
         mcplay.addEventListener('click', () => {
             currentlyPlaying.play();
             mcplay.style.visibility = 'hidden';
