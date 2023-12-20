@@ -31,6 +31,7 @@ audioElements.forEach(audio => {
 
     let loopit; // to check if track should be looped
 
+    //gets the id of the track
     let idd = audio.getAttribute('id');
     idd = "#" + idd;
     let iddd = document.querySelector(idd);
@@ -53,7 +54,6 @@ audioElements.forEach(audio => {
 
         if (currentlyPlaying !== null && currentlyPlaying !== audio) {
             currentlyPlaying.pause();
-
             minuter = 0;
             secondr = 1;
             mindiv.innerHTML = "0:";
@@ -116,7 +116,7 @@ audioElements.forEach(audio => {
         secondr = 1;
 
         if (loopit == true) {
-            iddd.play();
+            currentlyPlaying.play();
             minuter = 0;
             mindiv.innerHTML = "0:";
         }
