@@ -48,10 +48,10 @@ audioElements.forEach(audio => {
         var newsongnumber = songnumber.charAt(1);
         newsongnumber = parseInt(newsongnumber);
         newsongnumber++;
-        
+
         songid = "#t" + newsongnumber;
-        var getsong = document.querySelector(songid);
-        
+
+
         // music control pause button
         mcpause.addEventListener('click', () => {
             currentlyPlaying.pause();
@@ -139,7 +139,8 @@ audioElements.forEach(audio => {
         else {
             mcplay.style.visibility = 'visible';
             mcpause.style.visibility = 'hidden';
-        }        
+        }
+        var getsong = document.querySelector(songid);
         getsong.play();
     });
 });
