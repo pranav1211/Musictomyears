@@ -5,13 +5,12 @@ let mcplay = document.querySelector('.mcplay')
 let mcpause = document.querySelector('.mcpause')
 let shuffleon = document.querySelector('.shuffleon');
 let shuffleoff = document.querySelector('.shuffleoff');
-var nextsong = document.querySelector('.nextsong');
+var nextsong = document.querySelector('.nextsong')
 
 var songid;
 var songnumber;
 var getsong;
-var newsongnumber;
-var songduration;
+var newsongnumber
 
 var totalchecker = '1';
 
@@ -24,17 +23,16 @@ shuffleoff.addEventListener('click', () => {
     shuffleoff.style.visibility = 'hidden';
 });
 
-
+// getting the number of songs for control purposses
+fetch('musicdata.json')
+    .then(response => response.json())
+    .then(data => {
+        const noofsongs = data['number of songs'];
+        console.log(noofsongs);
+    })
+    .catch(error => console.error('Error reading JSON:', error));
 
 audioElements.forEach(audio => {
-    // getting the number of songs for control purposses
-    fetch('musicdata.json')
-        .then(response => response.json())
-        .then(data => {
-            var noofsongs = data['number of songs'];
-            console.log(noofsongs);
-        })
-        .catch(error => console.error('Error reading JSON:', error));
 
     var minuter = 0; // goes in the minute div
     var secondr = 1; //goes in the second div
@@ -53,6 +51,7 @@ audioElements.forEach(audio => {
         newsongnumber = songnumber.charAt(1); // taking the number of the song
         newsongnumber = parseInt(newsongnumber);
         newsongnumber++;
+
         songid = "#t" + newsongnumber; // setting the id for the next song
 
 
@@ -107,18 +106,6 @@ audioElements.forEach(audio => {
             }
         }
         intervalid1 = setInterval(forsecond, 1000);
-    });
-
-    // next song button
-    nextsong.addEventListener('click', () => {
-        clearInterval(intervalid1);
-        getsong = document.querySelector(songid);
-        getsong.play();
-        mcplay.style.visibility = 'hidden';
-        mcpause.style.visibility = 'visible';
-
-        minuter = 0;
-        secondr = 1;
     });
 
     //pause
