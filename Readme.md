@@ -19,7 +19,7 @@ Changelog :-
             -> music timer still works properly
             -> added next, previous and shuffle buttons that do not work for the moment, will enable \
                 in the future.
-            ->removed the pause button, you can still pause by pressing the play button it just does \
+            ->removed the pause button, you can still pause by pressing the play button it just does not\
                 show. the pause button can be seen in the music controls section.\
                 made it to work even when song is changed in the middle and also made it so \
                 when you go back to play another song that was played before it plays and does not \
@@ -29,6 +29,10 @@ Changelog :-
             ->changed the html wherin i removed the pause span tag.
             -> added a background gradient to the whole page
             -> added a 3d effect to the song list and the music controls
+    20/12/23:
+        V0.4
+            ->added next song, previous song, shuffle button (in development)
+            ->made it so when a song ends it plays the next one as seen on screen
 
 
 The Wordchanger file :-\
