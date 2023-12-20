@@ -119,12 +119,13 @@ audioElements.forEach(audio => {
 
     // next song button
     nextsong.addEventListener('click', () => {
+        getsong = document.querySelector(songid);
         if (noofsongs < newsongnumber) {
             getsong.currentTime = 3000;
         }
 
         clearInterval(intervalid1);
-        getsong = document.querySelector(songid);
+        
         getsong.play();
         mcplay.style.visibility = 'hidden';
         mcpause.style.visibility = 'visible';
