@@ -108,7 +108,9 @@ audioElements.forEach(audio => {
     });
 
     nextsong.addEventListener('click',()=>{
-        console.log('works');
+        songid.play();
+        minuter = 0;
+        secondr = 1;
     });
 
     //pause
