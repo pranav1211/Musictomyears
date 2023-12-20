@@ -36,13 +36,15 @@ audioElements.forEach(audio => {
 
     audio.addEventListener('play', () => {
 
-        songid = songid + songnumber;
-        var getsong = document.querySelector(songid);
-        // console.log(getsong)
-
         songnumber = audio.getAttribute('id');
         var newsongnumber = songnumber.charAt(1);
+        newsongnumber = parseInt(newsongnumber);
+        newsongnumber++;
         console.log(newsongnumber)
+
+        songid = songid + newsongnumber;
+        var getsong = document.querySelector(songid);
+        // console.log(getsong)
 
         // music control pause button
         mcpause.addEventListener('click', () => {
@@ -119,7 +121,7 @@ audioElements.forEach(audio => {
     //on end to loop or not
 
     audio.addEventListener('ended', () => {
-        
+
         minuter = 0;
         secondr = 1;
 
@@ -214,3 +216,4 @@ document.querySelector('.sfttrarlpl').addEventListener('click', () => {
         checker4 = '1';
     }
 });
+
