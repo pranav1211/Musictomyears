@@ -120,10 +120,9 @@ audioElements.forEach(audio => {
     // next song button
     nextsong.addEventListener('click', () => {
         if (noofsongs < newsongnumber) {
-            songduration = audio.duration;
-            getsong.currentTime = songduration;
+            getsong.currentTime = 3000;
         }
-        
+
         clearInterval(intervalid1);
         getsong = document.querySelector(songid);
         getsong.play();
