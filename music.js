@@ -31,7 +31,6 @@ shuffleoff.addEventListener('click', () => {
 fetch('musicdata.json')
     .then(response => response.json())
     .then(data => {
-        // Access the value using the key
         const noofsongs = data['number of songs'];
         console.log(noofsongs);
     })
