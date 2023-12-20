@@ -29,13 +29,14 @@ shuffleoff.addEventListener('click', () => {
 
 // Using fetch
 fetch('musicdata.json')
-  .then(response => response.json())
-  .then(data => {
-    // Access the value using the key
-    const numberOfSongs = data['number of songs'];
-    console.log('Number of songs:', numberOfSongs);
-  })
-  .catch(error => console.error('Error reading JSON:', error));
+    .then(response => response.json())
+    .then(data => {
+        // Access the value using the key
+        const numberOfSongs = data['number of songs'];
+        console.log('Number of songs:', numberOfSongs);
+    })
+
+    .catch(error => console.error('Error reading JSON:', error));
 
 
 audioElements.forEach(audio => {
