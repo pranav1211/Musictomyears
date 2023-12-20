@@ -22,8 +22,21 @@ shuffleoff.addEventListener('click', () => {
 
 });
 
-var check = document.querySelectorAll('#id');
-console.log(check)
+// Assuming you have a file named 'data.json' with the content:
+// {
+//   "number of songs": 4
+// }
+
+// Using fetch
+fetch('musicdata.json')
+  .then(response => response.json())
+  .then(data => {
+    // Access the value using the key
+    const numberOfSongs = data['number of songs'];
+    console.log('Number of songs:', numberOfSongs);
+  })
+  .catch(error => console.error('Error reading JSON:', error));
+
 
 audioElements.forEach(audio => {
 
