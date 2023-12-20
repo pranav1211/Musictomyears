@@ -22,7 +22,7 @@ shuffleoff.addEventListener('click', () => {
 
 });
 
-var check = document.querySelectorAll('id');
+var check = document.querySelector('id');
 console.log(check)
 
 audioElements.forEach(audio => {
