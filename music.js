@@ -50,7 +50,7 @@ audioElements.forEach(audio => {
         newsongnumber++;
         
         songid = "#t" + newsongnumber;
-        var getsong = document.querySelector(songid);
+        let getsong = document.querySelector(songid);
         
         // music control pause button
         mcpause.addEventListener('click', () => {
