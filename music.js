@@ -42,18 +42,16 @@ audioElements.forEach(audio => {
     audio.addEventListener('play', () => {
 
         mcpause.addEventListener('click', () => {
-            currentlyPlaying.pause(); 
+            currentlyPlaying.pause();
             mcplay.style.visibility = 'visible';
             mcpause.style.visibility = 'hidden';
             totalchecker = '1';
-            console.log(audio)
         });
 
         mcplay.addEventListener('click', () => {
             currentlyPlaying.play();
             mcplay.style.visibility = 'hidden';
             mcpause.style.visibility = 'visible';
-            console.log(audio)
         });
 
 
@@ -63,7 +61,7 @@ audioElements.forEach(audio => {
             minuter = 0;
             secondr = 1;
             mindiv.innerHTML = "0:";
-            audio.currentTime = 0; 
+            audio.currentTime = 0;
 
         }
 
