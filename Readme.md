@@ -33,6 +33,10 @@ Changelog :-
         V0.4
             ->added next song, previous song, shuffle button (in development)
             ->made it so when a song ends it plays the next one as seen on screen
+            ->created a json file to access 'number of songs' data for control purposess
+            ->fixed an issue where you could not pause the song from the play button
+            -> fixed an issue of the music control center play button playing another song after being paused
+            ->
 
 
 The Wordchanger file :-\
