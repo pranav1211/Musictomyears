@@ -30,7 +30,7 @@ audioElements.forEach(audio => {
     var replaystopbut = document.querySelector('.replaystopbutt') // repeat on
 
     let loopit; // to check if track should be looped
-    
+
     audio.addEventListener('play', () => {
 
         // music control pause button
@@ -41,7 +41,7 @@ audioElements.forEach(audio => {
             totalchecker = '1';
         });
 
-// music control play button
+        // music control play button
         mcplay.addEventListener('click', () => {
             currentlyPlaying.play();
             mcplay.style.visibility = 'hidden';
