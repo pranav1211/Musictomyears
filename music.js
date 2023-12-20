@@ -108,8 +108,11 @@ audioElements.forEach(audio => {
     });
 
     nextsong.addEventListener('click', () => {
+        clearInterval(intervalid1);
         getsong = document.querySelector(songid);
         getsong.play();
+        mcplay.style.visibility = 'hidden';
+        mcpause.style.visibility = 'visible';
         minuter = 0;
         secondr = 1;
     });
