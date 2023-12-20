@@ -38,7 +38,10 @@ audioElements.forEach(audio => {
 
         songid = songid + songnumber;
         var getsong = document.querySelector(songid);
-        console.log(getsong)
+        // console.log(getsong)
+
+        songnumber = audio.getAttribute('id');
+        console.log(songnumber)
 
         // music control pause button
         mcpause.addEventListener('click', () => {
