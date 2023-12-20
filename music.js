@@ -24,16 +24,17 @@ shuffleoff.addEventListener('click', () => {
     shuffleoff.style.visibility = 'hidden';
 });
 
-// getting the number of songs for control purposses
-fetch('musicdata.json')
-    .then(response => response.json())
-    .then(data => {
-        var noofsongs = data['number of songs'];
-        console.log(noofsongs);
-    })
-    .catch(error => console.error('Error reading JSON:', error));
+
 
 audioElements.forEach(audio => {
+    // getting the number of songs for control purposses
+    fetch('musicdata.json')
+        .then(response => response.json())
+        .then(data => {
+            var noofsongs = data['number of songs'];
+            console.log(noofsongs);
+        })
+        .catch(error => console.error('Error reading JSON:', error));
 
     var minuter = 0; // goes in the minute div
     var secondr = 1; //goes in the second div
