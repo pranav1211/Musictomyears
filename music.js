@@ -135,11 +135,7 @@ audioElements.forEach(audio => {
             currentlyPlaying.play();
             minuter = 0;
             mindiv.innerHTML = "0:";
-        }
-        else {
-            mcplay.style.visibility = 'visible';
-            mcpause.style.visibility = 'hidden';
-        }
+        }        
         var getsong = document.querySelector(songid);
         getsong.play();
     });
