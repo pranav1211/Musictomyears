@@ -29,7 +29,7 @@ audioElements.forEach(audio => {
     var replaystopbut = document.querySelector('.replaystopbutt')
 
     let loopit;
-        
+
     let idd = audio.getAttribute('id');
     idd = "#" + idd;
     let iddd = document.querySelector(idd);
