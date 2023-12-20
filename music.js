@@ -22,6 +22,9 @@ shuffleoff.addEventListener('click', () => {
 
 });
 
+var check = document.querySelectorAll('id');
+console.log(check)
+
 audioElements.forEach(audio => {
 
     var minuter = 0; // goes in the minute div
