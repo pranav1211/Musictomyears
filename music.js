@@ -41,6 +41,7 @@ audioElements.forEach(audio => {
         // console.log(getsong)
 
         songnumber = audio.getAttribute('id');
+        songnumber = songnumber.charAt(1);
         console.log(songnumber)
 
         // music control pause button
