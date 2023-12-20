@@ -8,6 +8,7 @@ let shuffleoff = document.querySelector('.shuffleoff');
 
 var songid;
 var songnumber;
+var getsong;
 
 var totalchecker = '1';
 
@@ -136,7 +137,7 @@ audioElements.forEach(audio => {
             minuter = 0;
             mindiv.innerHTML = "0:";
         }        
-        var getsong = document.querySelector(songid);
+        getsong = document.querySelector(songid);
         getsong.play();
     });
 });
