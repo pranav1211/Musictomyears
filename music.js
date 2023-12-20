@@ -93,7 +93,6 @@ audioElements.forEach(audio => {
 
     audio.addEventListener('pause', () => {
         clearInterval(intervalid1);
-
     });
 
     //replay
@@ -109,7 +108,7 @@ audioElements.forEach(audio => {
         loopit = false;
     });
 
-    //on end loop or not
+    //on end to loop or not
 
     audio.addEventListener('ended', () => {
         minuter = 0;
