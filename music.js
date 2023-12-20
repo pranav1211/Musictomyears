@@ -9,6 +9,7 @@ let shuffleoff = document.querySelector('.shuffleoff');
 var songid;
 var songnumber;
 var getsong;
+var newsongnumber
 
 var totalchecker = '1';
 
@@ -46,10 +47,10 @@ audioElements.forEach(audio => {
 
         //gets the id for the current audio playing
         songnumber = audio.getAttribute('id');
-        var newsongnumber = songnumber.charAt(1); // taking the number of the song
+        newsongnumber = songnumber.charAt(1); // taking the number of the song
         newsongnumber = parseInt(newsongnumber);
         newsongnumber++;
-        
+
         songid = "#t" + newsongnumber; // setting the id for the next song
 
 
@@ -137,8 +138,13 @@ audioElements.forEach(audio => {
             minuter = 0;
             mindiv.innerHTML = "0:";
         }
-        getsong = document.querySelector(songid);
-        getsong.play();
+        if (noofsongs < newsongnumber) {
+
+        }
+        else {
+            getsong = document.querySelector(songid);
+            getsong.play();
+        }
     });
 });
 
