@@ -22,12 +22,6 @@ shuffleoff.addEventListener('click', () => {
 
 });
 
-// Assuming you have a file named 'data.json' with the content:
-// {
-//   "number of songs": 4
-// }
-
-// Using fetch
 fetch('musicdata.json')
     .then(response => response.json())
     .then(data => {
