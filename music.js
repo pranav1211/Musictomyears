@@ -6,7 +6,7 @@ let mcpause = document.querySelector('.mcpause')
 let shuffleon = document.querySelector('.shuffleon');
 let shuffleoff = document.querySelector('.shuffleoff');
 
-var songid = "#t";
+var songid;
 var songnumber;
 
 var totalchecker = '1';
@@ -56,7 +56,7 @@ audioElements.forEach(audio => {
         newsongnumber++;
         console.log(newsongnumber)
 
-        songid = songid + newsongnumber;
+        songid = "#t" + newsongnumber;
         var getsong = document.querySelector(songid);
         console.log(getsong)
 
