@@ -1,4 +1,4 @@
-Hello there, This site is a music player site, this site is made with the intention of listening to my favourite music without the ads and unwanted sugesstions and also for me to learn about various topics like databases, node js, dynamic webpages and dynamic data. \
+Hello there, This site is a music player site, this site is made with the intention of listening to my favourite music without the ads and unwanted sugesstions and also for me to learn about various topics like databases, node js, dynamic webpages and dynamic data.
 
 You can check this site out at : www.beyondmebtw.com/projects/music
 
@@ -46,9 +46,9 @@ The Wordchanger file :-\
         -> The third and latest version is where i input the name of the file, the audio number and how many words is the title of the song.\
         -> I plan to keep upgrading features to make the process seamless, I plan to make it so that with only 1 input it can help generate the code.
 
-Dev notes / ideas:\
+Dev notes / ideas:
 
-5/12/23 \
+5/12/23 
 removed the interval for the minute part, made it a part of the second timer.\
 an issue is there where the minute changes when the minute changes 1 second before it's supposed to.\
 removed 16 songs from the main list because it became too much to handle with the amount of changes i am making.\
@@ -56,13 +56,13 @@ there are 4 songs with which i am testing right now and once i reach a stable ve
 i dont want it to be perfect i just need it to be efficient.\
 chane the word changer document to make it compatible with new format.
 
-18/12/23\
+18/12/23
 
 made the fix of the minute part starting on 59 seconds, realised that it was a scope issue.
 added some empty buttons, will need a way to iterate in the future for next and shuffle.
 maybe JSON or a JS object can use the song-id part. \
 
-20/12/23 \ 
+20/12/23 
 
 working on the loop button to make it loop for either the whole playlist or just and individual song
 
