@@ -15,14 +15,13 @@ var totalchecker = '1';
 shuffleon.addEventListener('click', () => {
     shuffleon.style.visibility = 'hidden'
     shuffleoff.style.visibility = 'visible';
-
 });
 shuffleoff.addEventListener('click', () => {
     shuffleon.style.visibility = 'visible'
     shuffleoff.style.visibility = 'hidden';
-
 });
 
+// getting the number of songs for control purposses
 fetch('musicdata.json')
     .then(response => response.json())
     .then(data => {
@@ -45,12 +44,13 @@ audioElements.forEach(audio => {
 
     audio.addEventListener('play', () => {
 
+        //gets the id for the current audio playing
         songnumber = audio.getAttribute('id');
-        var newsongnumber = songnumber.charAt(1);
+        var newsongnumber = songnumber.charAt(1); // taking the number of the song
         newsongnumber = parseInt(newsongnumber);
         newsongnumber++;
-
-        songid = "#t" + newsongnumber;
+        
+        songid = "#t" + newsongnumber; // setting the id for the next song
 
 
         // music control pause button
@@ -136,7 +136,7 @@ audioElements.forEach(audio => {
             currentlyPlaying.play();
             minuter = 0;
             mindiv.innerHTML = "0:";
-        }        
+        }
         getsong = document.querySelector(songid);
         getsong.play();
     });
