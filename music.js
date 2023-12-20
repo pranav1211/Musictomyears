@@ -56,8 +56,7 @@ audioElements.forEach(audio => {
         newsongnumber++;
         songid = "#t" + newsongnumber; // setting the id for the next song
 
-        songduration = audio.duration;
-        console.log(songduration)
+        
 
         // music control pause button
         mcpause.addEventListener('click', () => {
