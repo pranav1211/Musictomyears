@@ -139,7 +139,8 @@ audioElements.forEach(audio => {
             mindiv.innerHTML = "0:";
         }
         if (noofsongs < newsongnumber) {
-
+            mcplay.style.visibility = 'visible';
+            mcpause.style.visibility = 'hidden';
         }
         else {
             getsong = document.querySelector(songid);
