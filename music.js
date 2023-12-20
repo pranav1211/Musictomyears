@@ -1,5 +1,6 @@
 const audioElements = document.querySelectorAll('.audio-element');
 let currentlyPlaying = null;
+
 let mcplay = document.querySelector('.mcplay')
 let mcpause = document.querySelector('.mcpause')
 let shuffleon = document.querySelector('.shuffleon');
@@ -20,15 +21,15 @@ shuffleoff.addEventListener('click', () => {
 
 audioElements.forEach(audio => {
 
-    var minuter = 0; // goes in the inute div
+    var minuter = 0; // goes in the minute div
     var secondr = 1; //goes in the second div
     var mindiv = document.querySelector('#minuter');
     var secdiv = document.querySelector('#seconder');
-    var intervalid1;
-    var replaybut = document.querySelector('.replaybutt')
-    var replaystopbut = document.querySelector('.replaystopbutt')
+    var intervalid1; // for the second
+    var replaybut = document.querySelector('.replaybutt') //replay off
+    var replaystopbut = document.querySelector('.replaystopbutt') // repeat on
 
-    let loopit;
+    let loopit; // to check if track should be looped
 
     let idd = audio.getAttribute('id');
     idd = "#" + idd;
