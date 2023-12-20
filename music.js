@@ -121,6 +121,8 @@ audioElements.forEach(audio => {
     nextsong.addEventListener('click', () => {
         if (noofsongs < newsongnumber) {
             audio.currentTime = 3000;
+            mindiv.innerHTML = "0:";
+            secdiv.innerHTML = "00"
             minuter = 0;
             secondr = 1;
         }
