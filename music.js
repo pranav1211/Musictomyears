@@ -10,7 +10,8 @@ var nextsong = document.querySelector('.nextsong');
 var songid;
 var songnumber;
 var getsong;
-var newsongnumber
+var newsongnumber;
+var songduration;
 
 var totalchecker = '1';
 
@@ -107,12 +108,18 @@ audioElements.forEach(audio => {
         intervalid1 = setInterval(forsecond, 1000);
     });
 
+    // next song button
     nextsong.addEventListener('click', () => {
         clearInterval(intervalid1);
         getsong = document.querySelector(songid);
         getsong.play();
         mcplay.style.visibility = 'hidden';
         mcpause.style.visibility = 'visible';
+
+        if (noofsongs < newsongnumber){
+            songduration = audio.duration;
+            getsong.currentTime = songduration;
+        }
         minuter = 0;
         secondr = 1;
     });
