@@ -58,6 +58,7 @@ audioElements.forEach(audio => {
 
         }
 
+        // for displaying the attributes in the music control panel
         currentlyPlaying = audio;
         const fileName = audio.getAttribute('data-file-name');
         document.getElementById("titletrack").innerHTML = `${fileName}`;
