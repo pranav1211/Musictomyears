@@ -45,8 +45,7 @@ audioElements.forEach(audio => {
 
     let loopit; // to check if track should be looped
 
-    songduration = audio.duration;
-    console.log(songduration)
+
 
     audio.addEventListener('play', () => {
 
@@ -57,6 +56,8 @@ audioElements.forEach(audio => {
         newsongnumber++;
         songid = "#t" + newsongnumber; // setting the id for the next song
 
+        songduration = audio.duration;
+        console.log(songduration)
 
         // music control pause button
         mcpause.addEventListener('click', () => {
