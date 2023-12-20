@@ -30,12 +30,7 @@ audioElements.forEach(audio => {
     var replaystopbut = document.querySelector('.replaystopbutt') // repeat on
 
     let loopit; // to check if track should be looped
-
-    //gets the id of the track
-    let idd = audio.getAttribute('id');
-    idd = "#" + idd;
-    let iddd = document.querySelector(idd);
-
+    
     audio.addEventListener('play', () => {
 
         mcpause.addEventListener('click', () => {
