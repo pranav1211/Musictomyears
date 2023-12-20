@@ -42,7 +42,7 @@ audioElements.forEach(audio => {
     audio.addEventListener('play', () => {
 
         mcpause.addEventListener('click', () => {
-            iddd.pause();
+            iddd.pause(); 
             mcplay.style.visibility = 'visible';
             mcpause.style.visibility = 'hidden';
             totalchecker = '1';
