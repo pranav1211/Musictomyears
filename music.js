@@ -6,7 +6,8 @@ let mcpause = document.querySelector('.mcpause')
 let shuffleon = document.querySelector('.shuffleon');
 let shuffleoff = document.querySelector('.shuffleoff');
 
-let songid = "#t";
+var songid = "#t";
+var songnumber = 1;
 
 var totalchecker = '1';
 
