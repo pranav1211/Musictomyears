@@ -13,7 +13,13 @@ var getsong;
 var newsongnumber;
 var songduration;
 
-var totalchecker = '1';
+var totalcheck = '0';
+
+var replaybut = document.querySelector('.replaybutt') //replay off
+var replayplaylist = document.querySelector('.replayplaylistt') // repeat on
+var replayonesong = document.querySelector('.replayonesong') // repeat on
+var mindiv = document.querySelector('#minuter'); // minute div
+var secdiv = document.querySelector('#seconder');   // second div
 
 shuffleon.addEventListener('click', () => {
     shuffleon.style.visibility = 'hidden'
@@ -26,6 +32,9 @@ shuffleoff.addEventListener('click', () => {
 
 var noofsongs;
 
+var minuter = 0; // goes in the minute div
+var secondr = 1; //goes in the second div
+
 // getting the number of songs for control purposses
 fetch('musicdata.json')
     .then(response => response.json())
@@ -37,17 +46,11 @@ fetch('musicdata.json')
 
 audioElements.forEach(audio => {
 
-    var minuter = 0; // goes in the minute div
-    var secondr = 1; //goes in the second div
-    var mindiv = document.querySelector('#minuter');
-    var secdiv = document.querySelector('#seconder');
     var intervalid1; // for the second
-    var replaybut = document.querySelector('.replaybutt') //replay off
-    var replaystopbut = document.querySelector('.replaystopbutt') // repeat on
-
-    let loopit; // to check if track should be looped
+    let loopit = 'norepeat'; // to check if track should be looped
 
     audio.addEventListener('play', () => {
+
 
         //gets the id for the current audio playing
         songnumber = audio.getAttribute('id');
@@ -63,7 +66,6 @@ audioElements.forEach(audio => {
             currentlyPlaying.pause();
             mcplay.style.visibility = 'visible';
             mcpause.style.visibility = 'hidden';
-            totalchecker = '1';
         });
 
         // music control play button
@@ -80,9 +82,7 @@ audioElements.forEach(audio => {
             secondr = 1;
             mindiv.innerHTML = "0:";
             audio.currentTime = 0;
-
         }
-
         // for displaying the attributes in the music control panel
         currentlyPlaying = audio;
         const fileName = audio.getAttribute('data-file-name');
@@ -119,17 +119,26 @@ audioElements.forEach(audio => {
 
     // next song button
     nextsong.addEventListener('click', () => {
-        if (noofsongs < newsongnumber) {
-            audio.currentTime = 3000;
-            mindiv.innerHTML = "0:";
-            secdiv.innerHTML = "00"
-            minuter = 0;
-            secondr = 1;
+        if (noofsongs < newsongnumber) { // if the number of songs from json file is less than number that is used to get song id it means the end of playlist has been reached
+            if (loopit == 'whole') {
+                songid = "#t1"
+                getsong = document.querySelector(songid);
+                getsong.play();
+                newsongnumber = 2;
+            }
+            else {
+                audio.currentTime = 3000;
+                mindiv.innerHTML = "0:";
+                secdiv.innerHTML = "00"
+                minuter = 0;
+                secondr = 1;
+            }
         }
 
         clearInterval(intervalid1);
         getsong = document.querySelector(songid);
         getsong.play();
+
         mcplay.style.visibility = 'hidden';
         mcpause.style.visibility = 'visible';
 
@@ -139,36 +148,66 @@ audioElements.forEach(audio => {
 
     //replay
 
-    replaybut.addEventListener('click', () => {
+    replaybut.addEventListener('click', () => { // off
         replaybut.style.visibility = 'hidden'
-        replaystopbut.style.visibility = 'visible';
-        loopit = true;
+        replayplaylist.style.visibility = 'visible';
+        replayonesong.style.visibility = 'hidden'
+        loopit = 'whole';
     });
-    replaystopbut.addEventListener('click', () => {
+    replayplaylist.addEventListener('click', () => { //on for playlist
+        replaybut.style.visibility = 'hidden'
+        replayplaylist.style.visibility = 'hidden';
+        replayonesong.style.visibility = 'visible'
+        loopit = 'onesong';
+    });
+    replayonesong.addEventListener('click', () => { // on for only one song
         replaybut.style.visibility = 'visible'
-        replaystopbut.style.visibility = 'hidden';
-        loopit = false;
+        replayplaylist.style.visibility = 'hidden';
+        replayonesong.style.visibility = 'hidden'
+        loopit = 'norepeat';
     });
 
     //on end to loop or not
 
     audio.addEventListener('ended', () => {
 
+
         minuter = 0;
         secondr = 1;
 
-        if (loopit == true) {
+        if (loopit == 'onesong') {
             currentlyPlaying.play();
             minuter = 0;
             mindiv.innerHTML = "0:";
         }
-        if (noofsongs < newsongnumber) {
-            mcplay.style.visibility = 'visible';
-            mcpause.style.visibility = 'hidden';
+
+        else if (loopit == "whole") {
+            if (noofsongs < newsongnumber) {
+                songid = "#t1"
+                getsong = document.querySelector(songid);
+                getsong.play();
+                newsongnumber = 2;
+            }
+            else if (noofsongs >= newsongnumber) {
+                newsongnumber = 2;
+                newsongnumber = parseInt(newsongnumber);
+                songid = "#t" + newsongnumber;
+                getsong = document.querySelector(songid);
+                getsong.play();
+                newsongnumber++;
+            }
         }
-        else {
-            getsong = document.querySelector(songid);
-            getsong.play();
+        else if (loopit == 'norepeat') {
+            if (newsongnumber == (noofsongs + 1)) {
+                mcplay.style.visibility = 'visible';
+                mcpause.style.visibility = 'hidden';
+            }
+            else {
+                mcplay.style.visibility = 'hidden';
+                mcpause.style.visibility = 'visible';
+                getsong = document.querySelector(songid);
+                getsong.play();
+            }
         }
     });
 });
@@ -178,74 +217,59 @@ audioElements.forEach(audio => {
 
 /////////////////////////////////////////////////////////////////
 var p1 = document.getElementById("t1")
-var checker1 = '1';
-document.querySelector('.showerpl').addEventListener("click", () => {
-    if (checker1 == '1' || totalchecker == '1') {
-        p1.play();
-        totalchecker = '0';
-        checker1 = '0';
-        mcplay.style.visibility = 'hidden';
-        mcpause.style.visibility = 'visible';
-    }
-    else if (checker1 == '0') {
-        p1.pause();
-        mcplay.style.visibility = 'visible';
-        mcpause.style.visibility = 'hidden';
-        checker1 = '1';
-    }
+var bar0 = document.querySelector('.bar0')
+var bar1 = document.querySelector('.bar1')
+var bar2 = document.querySelector('.bar2')
+document.querySelector('.showerbeckyg').addEventListener("click", () => {
+    p1.play();
+    p1.currentTime = 0;
+    mcplay.style.visibility = 'hidden';
+    mcpause.style.visibility = 'visible';
+    mindiv.innerHTML = "0:";
+    secdiv.innerHTML = "00"
+    minuter = 0;
+    secondr = 1;
+    bar1.style.visibility = 'visible'
+    musicbars.style.animation = 'bounce 4s ease infinite'
+    musicbars.style.transformOrigin = 'bottom';
+    bar1.style.marginLeft = '1.5%'
+    bar2.style.marginLeft = '3%'
 });
 //////////////////////////////////////////////////////
 var p2 = document.getElementById("t2")
-var checker2 = '1';
-document.querySelector('.cptupl').addEventListener('click', () => {
-    if (checker2 == '1' || totalchecker == '1') {
-        p2.play();
-        totalchecker = '0';
-        checker2 = '0';
-        mcplay.style.visibility = 'hidden';
-        mcpause.style.visibility = 'visible';
-    }
-    else if (checker2 == '0') {
-        p2.pause();
-        mcplay.style.visibility = 'visible';
-        mcpause.style.visibility = 'hidden';
-        checker2 = '1';
-    }
+document.querySelector('.confessions-part-2-usher').addEventListener('click', () => {
+    p2.play();
+    mcplay.style.visibility = 'hidden';
+    mcpause.style.visibility = 'visible';
+    mindiv.innerHTML = "0:";
+    secdiv.innerHTML = "00"
+    minuter = 0;
+    secondr = 1; 
+    
 });
 //////////////////////////////////////////////////////
 var p3 = document.getElementById("t3")
-var checker3 = '1';
-document.querySelector('.solrpl').addEventListener('click', () => {
-    if (checker3 == '1' || totalchecker == '1') {
-        p3.play();
-        totalchecker = '0';
-        checker3 = '0';
-        mcplay.style.visibility = 'hidden';
-        mcpause.style.visibility = 'visible';
-    }
-    else if (checker3 == '0') {
-        p3.pause();
-        mcplay.style.visibility = 'visible';
-        mcpause.style.visibility = 'hidden';
-        checker3 = '1';
-    }
+document.querySelector('.seasons-of-love-rent').addEventListener('click', () => {
+    p3.play();
+    mcplay.style.visibility = 'hidden';
+    mcpause.style.visibility = 'visible';
+    mindiv.innerHTML = "0:";
+    secdiv.innerHTML = "00"
+    minuter = 0;
+    secondr = 1;
+    
 });
 ////////////////////////////////////////////////////////
 var p4 = document.getElementById('t4')
-var checker4 = '1';
-document.querySelector('.sfttrarlpl').addEventListener('click', () => {
-    if (checker4 == '1' || totalchecker == '1') {
-        p4.play();
-        totalchecker = '0';
-        checker4 = '0';
-        mcplay.style.visibility = 'hidden';
-        mcpause.style.visibility = 'visible';
-    }
-    else if (checker4 == '0') {
-        p4.pause();
-        mcplay.style.visibility = 'visible';
-        mcpause.style.visibility = 'hidden';
-        checker4 = '1';
-    }
+var checker4 = 1;
+document.querySelector('.set-fire-to-the-rain-adele-royal-albert').addEventListener('click', () => {
+    p4.play();
+    mcplay.style.visibility = 'hidden';
+    mcpause.style.visibility = 'visible';
+    mindiv.innerHTML = "0:";
+    secdiv.innerHTML = "00"
+    minuter = 0;
+    secondr = 1;
+    
 });
 

@@ -36,7 +36,20 @@ Changelog :-
             ->created a json file to access 'number of songs' data for control purposess
             ->fixed an issue where you could not pause the song from the play button
             -> fixed an issue of the music control center play button playing another song after being paused
-            ->
+    24/12/23
+        V0.5
+            -> fixed an issue where if you pause the song using the music control pause and the played a song from the list using its button and then a second song using its button the second was not playing. it was a control varible issue
+            -> fixed an issue where the loop button for individual song was not working, had to add an else to another if condition to prevent promise from happenning
+            ->added another loop button for individual song, it can be accessed by clicking through the loop buttons.
+            -> fixed an issue where the next button was not recognizing the loop button, had to add the code in the next button listener for that
+    26/12/23
+        V 0.6
+            -> fixed an issue of a song not playing after another song played
+    3/1/2024
+        V 0.7
+            -> removed the ability to pause from the playlist part, that just plays now, made it so anywhere you click on the container it plays
+            -> made the text in the music controller a responsive font so that the whole does not keep shifting if a song has more words
+
 
 
 The Wordchanger file :-\
@@ -70,5 +83,23 @@ Dev notes / ideas: (ignore if you want)
 ->have to enter song data into json file. look into SQLlite.\
 ->have to work on the shuffle button
 ->have to work on the next and previous song previous song button, for previous song button set time to 1 second and also do the clear interval and change content in div for it.
+
+24/12/23
+
+-> loop button works, no issues so far.\
+
+27/12/23
+
+-> having major issues with the play and pause functions of the system when i play one thing and pause one thing, currently using\
+    control variables which is too complicated and clearly not working. for a fix working on an animation that shows what is playing \
+    and that will be clickable therefore bringing back the pause button in another form. it's simpler that way and also reduces the number \
+    of operations needed to be performed regarding global variables functions.
+-> hopefully the new idea works, animation works just need to configure it to the player.
+-> have to figure out the logic in relation to the music control play button.
+
+3/1/24
+
+-> removed the pause and the whole control variable thing, life is easier without it\
+-> working on an animation for the song that is playing so that the user knows what is playing
 
 

@@ -7,7 +7,6 @@ body {
     margin-left: 25px;
     margin-right: 25px;
     margin-top: 25px;
-    cursor: pointer;
     border-radius: 35px;
 
 }
@@ -27,14 +26,21 @@ body {
 .replaybutt {
     cursor: pointer;
     width: 1.7vw;
-    
     margin-left: 0.4vw;
+
 }
 
-.replaystopbutt {
+.replayplaylistt {
     cursor: pointer;
     width: 1.7vw;
     margin-left: -2.2vw !important;
+    visibility: hidden;
+}
+
+.replayonesong {
+    cursor: pointer;
+    width: 1.7vw;
+    margin-left: -2.7vw !important;
     visibility: hidden;
 }
 
@@ -55,24 +61,25 @@ body {
     cursor: pointer;
 }
 
-.prevsong{
+.prevsong {
     margin-right: 1vw;
 }
 
-.nextsong{
+.nextsong {
     margin-left: 1vw;
 }
 
-.shuffle{
+.shuffle {
     width: 1.8vw;
-    cursor: pointer;    
+    cursor: pointer;
 }
 
-.shuffleon{
+.shuffleon {
     visibility: hidden;
     margin-left: -2vw;
 }
-.shuffleoff{
+
+.shuffleoff {
     margin-left: 1.5vw;
 }
 
@@ -84,6 +91,7 @@ body {
     padding-bottom: 1.vw;
     padding-right: 1vw;
     margin-top: -0.6vw;
+    cursor: pointer;
 
 }
 
@@ -164,7 +172,7 @@ body {
 #counter {
 
     color: black;
-    font-size: 30px;
+    font-size: 1.6vw;
 
 }
 
@@ -172,4 +180,55 @@ body {
     display: flex;
     margin-top: -1%;
     margin-left: 8.6vw;
+}
+
+.animationaud{
+    display: flex;
+    position: inherit;
+    visibility: hidden;
+}
+
+.thebars {
+    width: 10px;
+    height: 60px;
+    background-color: black;
+    position: fixed;
+    visibility: hidden;
+    animation : bounce 4s ease infinite;
+    &:nth-of-type(2) {
+        animation-delay: -2s;
+    }
+
+    &:nth-of-type(3) {
+        animation-delay: -1s;
+    }
+}
+
+.bar1{
+    margin-left: 0.6%;
+}
+.bar2{
+    margin-left: 1.2%;
+}
+
+@keyframes bounce {
+    10% {
+        transform: scaleY(0.3);
+        /* start by scaling to 30% */
+    }
+
+    30% {
+        transform: scaleY(1);
+        /* scale up to 100% */
+    }
+
+    60% {
+        transform: scaleY(0.5);
+        /* scale down to 50% */
+    }
+
+    80% {
+        transform: scaleY(0.75);
+        /* scale up to 75% */
+    }
 }
