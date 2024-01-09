@@ -53,8 +53,8 @@ Changelog :-
             -> fixed an issue of a song not playing after another song played
     3/1/2024
         V 0.7
-            -> removed the ability to pause from the playlist part, that just plays now, made it so anywhere
-             you click on the container it plays
+            -> removed the ability to pause from the playlist part, that just plays now, made it so
+            anywhere you click on the container it plays
             -> made the text in the music controller a responsive font so that the whole does not keep
              shifting if a song has more words
             ->also the play and pause thing works just as it should, its simple.
