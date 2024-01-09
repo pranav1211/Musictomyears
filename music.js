@@ -3,15 +3,24 @@ let currentlyPlaying = null;
 
 let mcplay = document.querySelector('.mcplay')
 let mcpause = document.querySelector('.mcpause')
-let shuffleon = document.querySelector('.shuffleon');
-let shuffleoff = document.querySelector('.shuffleoff');
+// let shuffleon = document.querySelector('.shuffleon');
+// let shuffleoff = document.querySelector('.shuffleoff');
 var nextsong = document.querySelector(".nextsong");
+var prevsong = document.querySelector(".prevsong");
 
-var songid;
+var nextsongid;
+var prevsongid;
 var songnumber;
 var getsong;
-var newsongnumber;
+var nextsongnumber;
+var prevsongnumber;
+var currentsongnumber;
 var songduration;
+var samesong;
+var songid;
+var fromback;
+
+var prevswitcher
 
 var totalcheck = '0';
 
@@ -21,19 +30,19 @@ var replayonesong = document.querySelector('.replayonesong') // repeat on
 var mindiv = document.querySelector('#minuter'); // minute div
 var secdiv = document.querySelector('#seconder');   // second div
 
-shuffleon.addEventListener('click', () => {
-    shuffleon.style.visibility = 'hidden'
-    shuffleoff.style.visibility = 'visible';
-});
-shuffleoff.addEventListener('click', () => {
-    shuffleon.style.visibility = 'visible'
-    shuffleoff.style.visibility = 'hidden';
-});
+// shuffleon.addEventListener('click', () => {
+//     shuffleon.style.visibility = 'hidden'
+//     shuffleoff.style.visibility = 'visible';
+// });
+// shuffleoff.addEventListener('click', () => {
+//     shuffleon.style.visibility = 'visible'
+//     shuffleoff.style.visibility = 'hidden';
+// });
 
 var noofsongs;
 
-var minuter = 0; // goes in the minute div
-var secondr = 1; //goes in the second div
+let minuter = 0; // goes in the minute div
+let secondr = 1; //goes in the second div
 
 // getting the number of songs for control purposses
 fetch('musicdata.json')
@@ -51,24 +60,30 @@ audioElements.forEach(audio => {
 
     audio.addEventListener('play', () => {
 
+        minuter = 0;
+        secondr = 1;
 
         //gets the id for the current audio playing
         songnumber = audio.getAttribute('id');
-        newsongnumber = songnumber.charAt(1); // taking the number of the song
-        newsongnumber = parseInt(newsongnumber);
-        newsongnumber++;
+        nextsongnumber = songnumber.charAt(1); // taking the number of the song
+        nextsongnumber = parseInt(nextsongnumber);
+        nextsongnumber++;
+        nextsongid = "#t" + nextsongnumber; // setting the id for the next song
 
-        songid = "#t" + newsongnumber; // setting the id for the next song
+        prevsongnumber = nextsongnumber - 2
+        prevsongid = "#t" + prevsongnumber;
 
+        currentsongnumber = nextsongnumber - 1
+        songid = "#t" + currentsongnumber
 
-        // music control pause button
+        // music control PAUSE button
         mcpause.addEventListener('click', () => {
             currentlyPlaying.pause();
             mcplay.style.visibility = 'visible';
             mcpause.style.visibility = 'hidden';
         });
 
-        // music control play button
+        // music control PLAY button
         mcplay.addEventListener('click', () => {
             currentlyPlaying.play();
             mcplay.style.visibility = 'hidden';
@@ -76,6 +91,7 @@ audioElements.forEach(audio => {
         });
 
         // to check if audio is playing or ended
+
         if (currentlyPlaying !== null && currentlyPlaying !== audio) {
             currentlyPlaying.pause();
             minuter = 0;
@@ -107,8 +123,11 @@ audioElements.forEach(audio => {
                 secdiv.innerHTML = secondr;
                 secondr++;
             }
+
+
         }
         intervalid1 = setInterval(forsecond, 1000);
+
     });
 
     //pause
@@ -118,13 +137,14 @@ audioElements.forEach(audio => {
     });
 
     // next song button
+
     nextsong.addEventListener('click', () => {
-        if (noofsongs < newsongnumber) { // if the number of songs from json file is less than number that is used to get song id it means the end of playlist has been reached
+        if (noofsongs < nextsongnumber) { // if the number of songs from json file is less than number that is used to get song id it means the end of playlist has been reached
             if (loopit == 'whole') {
-                songid = "#t1"
-                getsong = document.querySelector(songid);
+                nextsongid = "#t1"
+                getsong = document.querySelector(nextsongid);
                 getsong.play();
-                newsongnumber = 2;
+                nextsongnumber = 2;
             }
             else {
                 audio.currentTime = 3000;
@@ -136,7 +156,7 @@ audioElements.forEach(audio => {
         }
 
         clearInterval(intervalid1);
-        getsong = document.querySelector(songid);
+        getsong = document.querySelector(nextsongid);
         getsong.play();
 
         mcplay.style.visibility = 'hidden';
@@ -146,7 +166,46 @@ audioElements.forEach(audio => {
         secondr = 1;
     });
 
-    //replay
+    //previous song button
+
+    prevsong.addEventListener('click', () => {
+        if (secondr <= 4) { // this is to go back to the previous song, 3 second leeway
+            if (songid == "#t1") {
+                if (loopit == 'whole') {
+                    fromback = noofsongs
+                    prevsongid = "#t" + fromback
+                    getsong = document.querySelector(prevsongid)
+                    getsong.play()
+                    fromback--;
+                }
+                else {
+                    audio.pause()
+                    audio.currentTime = 0;
+                    mcplay.style.visibility = 'visible';
+                    mcpause.style.visibility = 'hidden';
+                }
+            }
+            else if (loopit == "onesong") {
+                audio.currentTime = 0;
+            }
+            else {
+                getsong = document.querySelector(prevsongid);
+                getsong.play();
+            }
+        }
+        else if (secondr > 4) { // this is to go to the starting of the song after 3 second leeway 
+            audio.currentTime = 0;
+        }
+
+        if (loopit == "onesong") {
+            audio.currentTime = 0;
+        }
+        setTimeout(() => {
+            secondr = 0;
+        }, 100);
+    })
+
+    //replay checker
 
     replaybut.addEventListener('click', () => { // off
         replaybut.style.visibility = 'hidden'
@@ -167,7 +226,7 @@ audioElements.forEach(audio => {
         loopit = 'norepeat';
     });
 
-    //on end to loop or not
+    //looping based on replay checker and also operations of playing next song when song ends
 
     audio.addEventListener('ended', () => {
 
@@ -182,30 +241,30 @@ audioElements.forEach(audio => {
         }
 
         else if (loopit == "whole") {
-            if (noofsongs < newsongnumber) {
-                songid = "#t1"
-                getsong = document.querySelector(songid);
+            if (noofsongs < nextsongnumber) {
+                nextsongid = "#t1"
+                getsong = document.querySelector(nextsongid);
                 getsong.play();
-                newsongnumber = 2;
+                nextsongnumber = 2;
             }
-            else if (noofsongs >= newsongnumber) {
-                newsongnumber = 2;
-                newsongnumber = parseInt(newsongnumber);
-                songid = "#t" + newsongnumber;
-                getsong = document.querySelector(songid);
+            else if (noofsongs >= nextsongnumber) {
+                nextsongnumber = 2;
+                nextsongnumber = parseInt(nextsongnumber);
+                nextsongid = "#t" + nextsongnumber;
+                getsong = document.querySelector(nextsongid);
                 getsong.play();
-                newsongnumber++;
+                nextsongnumber++;
             }
         }
         else if (loopit == 'norepeat') {
-            if (newsongnumber == (noofsongs + 1)) {
+            if (nextsongnumber == (noofsongs + 1)) {
                 mcplay.style.visibility = 'visible';
                 mcpause.style.visibility = 'hidden';
             }
             else {
                 mcplay.style.visibility = 'hidden';
                 mcpause.style.visibility = 'visible';
-                getsong = document.querySelector(songid);
+                getsong = document.querySelector(nextsongid);
                 getsong.play();
             }
         }
@@ -217,9 +276,9 @@ audioElements.forEach(audio => {
 
 /////////////////////////////////////////////////////////////////
 var p1 = document.getElementById("t1")
-var bar0 = document.querySelector('.bar0')
-var bar1 = document.querySelector('.bar1')
-var bar2 = document.querySelector('.bar2')
+// var bar0 = document.querySelector('.bar0')
+// var bar1 = document.querySelector('.bar1')
+// var bar2 = document.querySelector('.bar2')
 document.querySelector('.showerbeckyg').addEventListener("click", () => {
     p1.play();
     p1.currentTime = 0;
@@ -229,47 +288,50 @@ document.querySelector('.showerbeckyg').addEventListener("click", () => {
     secdiv.innerHTML = "00"
     minuter = 0;
     secondr = 1;
-    bar1.style.visibility = 'visible'
-    musicbars.style.animation = 'bounce 4s ease infinite'
-    musicbars.style.transformOrigin = 'bottom';
-    bar1.style.marginLeft = '1.5%'
-    bar2.style.marginLeft = '3%'
+    // bar1.style.visibility = 'visible'
+    // musicbars.style.animation = 'bounce 4s ease infinite'
+    // musicbars.style.transformOrigin = 'bottom';
+    // bar1.style.marginLeft = '1.5%'
+    // bar2.style.marginLeft = '3%'
 });
 //////////////////////////////////////////////////////
 var p2 = document.getElementById("t2")
 document.querySelector('.confessions-part-2-usher').addEventListener('click', () => {
     p2.play();
-    mcplay.style.visibility = 'hidden';
-    mcpause.style.visibility = 'visible';
-    mindiv.innerHTML = "0:";
-    secdiv.innerHTML = "00"
-    minuter = 0;
-    secondr = 1; 
-    
-});
-//////////////////////////////////////////////////////
-var p3 = document.getElementById("t3")
-document.querySelector('.seasons-of-love-rent').addEventListener('click', () => {
-    p3.play();
+    p2.currentTime = 0;
     mcplay.style.visibility = 'hidden';
     mcpause.style.visibility = 'visible';
     mindiv.innerHTML = "0:";
     secdiv.innerHTML = "00"
     minuter = 0;
     secondr = 1;
-    
+
+});
+//////////////////////////////////////////////////////
+var p3 = document.getElementById("t3")
+document.querySelector('.seasons-of-love-rent').addEventListener('click', () => {
+    p3.play();
+    p3.currentTime = 0;
+    mcplay.style.visibility = 'hidden';
+    mcpause.style.visibility = 'visible';
+    mindiv.innerHTML = "0:";
+    secdiv.innerHTML = "00"
+    minuter = 0;
+    secondr = 1;
+
 });
 ////////////////////////////////////////////////////////
 var p4 = document.getElementById('t4')
 var checker4 = 1;
 document.querySelector('.set-fire-to-the-rain-adele-royal-albert').addEventListener('click', () => {
     p4.play();
+    p4.currentTime = 0;
     mcplay.style.visibility = 'hidden';
     mcpause.style.visibility = 'visible';
     mindiv.innerHTML = "0:";
     secdiv.innerHTML = "00"
     minuter = 0;
     secondr = 1;
-    
+
 });
 
