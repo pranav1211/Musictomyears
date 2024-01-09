@@ -44,7 +44,8 @@ Changelog :-
             not playing. it was a control varible issue 
             -> fixed an issue where the loop button for individual song was not working, had to add an
             else to another if condition to prevent promise from happenning
-            ->added another loop button for individual song, it can be accessed by clicking through the loop buttons.
+            ->added another loop button for individual song, it can be accessed by clicking through the
+            loop buttons.
             -> fixed an issue where the next button was not recognizing the loop button, had to add the
             code in the next button listener for that
     26/12/23
@@ -64,7 +65,8 @@ Changelog :-
             ->removed the shuffle button
             ->The previous song button also works with regards to the loopiing features.
             ->also to give credit where credit is due, Chat-GPT 3.5 helped me with a playback issue as it
-            was conflicting with the second variable it suggested to use a delay and it works just as a i wanted it to.
+            was conflicting with the second variable it suggested to use a delay and it works just
+            as a i wanted it to.
 
 
 
