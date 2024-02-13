@@ -67,6 +67,23 @@ Changelog :-
             ->also to give credit where credit is due, Chat-GPT 3.5 helped me with a playback issue as it
             was conflicting with the second variable it suggested to use a delay and it works just
             as a i wanted it to.
+    26/01/2024
+        V 0.9
+            -> fixed issue of timer resetting if the music was paused and then played again.
+    27/01/2024
+        V 1.0
+            ->added a new song to the list
+            ->removed the play button icon
+            ->updated the word changer file
+            ->added audio visualizers
+            ->moved the text to the left of the div
+            ->fixed the alignment and overflow of the divs
+            ->changed the color of the song list box to make it pop more
+    14/02/2024
+        V 1.1
+            ->moved the music control center to the footer
+            ->new icons for the replay,play,next and previous buttons
+            ->shuffle button is back but not functional
 
 
 
@@ -76,6 +93,10 @@ The Wordchanger file :-\
         -> The second version i wrote code that was able to grab the first letter of each word that helped in creating the id for the elements.\
         -> The third and latest version is where i input the name of the file, the audio number and how many words is the title of the song.\
         -> I plan to keep upgrading features to make the process seamless, I plan to make it so that with only 1 input it can help generate the code.
+    
+    27/01/2024
+        -> the Word changer code has been updated to support the latest version of the html and js code
+
 
 ******************************************
 
@@ -128,4 +149,13 @@ Dev notes / ideas:
 -> i want to add the song cover to the thing. also if it could be a little smaller.\
 -> almost done with the final code for the html and js but gonna start updating the word changer to the latest version.
 
+27/1/24
+-> cleaned the js and css code to allow for better readablity\
+-> added the audio visualizers, need to connect them with the other fucntions of next song, prev song and loop\
+-> might have to make the control center sligtly bigger or make default size bigger, its coz CAGYL is changing it
 
+14/02/24
+-> planning to add a seek bar for the music instead of just keeping the timer coz it looks fugly
+->gonna change background colors as it does not make sense rn
+-> have to figure out how to make the animation audio bars stick to the song div, because its scrolling with the playlist right now
+-> also planning a revamp for www.Beyondmebtw.com
